@@ -1476,3 +1476,10 @@ video::cue{font-family:var(--sans,system-ui),system-ui,sans-serif;font-size:clam
 @media (max-aspect-ratio:1/1){
   .cold-open--wide .credit-chip--cold{top:calc(var(--nav-h,56px) + 7svh + 56.25vw + 10px);bottom:auto;left:var(--gutter);right:var(--gutter);max-width:none;text-align:center;font-size:.6rem}
 }
+
+/* The cold open's "Tap for sound" stays off the picture (it sat on the speaker's face):
+   phones put it under the clip and its credit line; wider screens, in the top-right corner. */
+.cold-open--wide .sound-cta{top:calc(var(--nav-h,56px) + 24px);right:var(--gutter);left:auto;transform:none}
+@media (max-aspect-ratio:1/1){
+  .cold-open--wide .sound-cta{top:calc(var(--nav-h,56px) + 7svh + 56.25vw + 74px);left:50%;right:auto;transform:translateX(-50%);padding:11px 18px;font-size:.7rem;white-space:nowrap}
+}
