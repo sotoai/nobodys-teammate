@@ -1,0 +1,709 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nobody's Teammate · Snakes &amp; Gardens</title>
+<meta name="description" content="An internal Snakes &amp; Gardens edition, October 2026: why self-sovereign agents are about to make the internet behave very strangely, and what that means for trust.">
+<meta name="color-scheme" content="dark">
+<meta name="robots" content="noindex, nofollow, noimageindex, noarchive">
+<link rel="canonical" href="https://sotoai.github.io/nobodys-teammate/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Snakes &amp; Gardens">
+<meta property="og:title" content="Nobody's Teammate">
+<meta property="og:description" content="Why self-sovereign agents are about to make the internet behave very strangely. An internal Snakes &amp; Gardens edition, October 2026.">
+<meta property="og:url" content="https://sotoai.github.io/nobodys-teammate/">
+<meta property="og:image" content="https://sotoai.github.io/nobodys-teammate/assets/brand/og-nobodys-teammate.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Jean Phil drawn as a playing card on a red lattice, beside the words Nobody's Teammate">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/brand/mark.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#cold-open">Skip to the story</a>
+
+<svg class="sg-sprite" width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><g id="sg-logo" fill="currentColor"><path d="M178.52,348.08a1.36,1.36,0,0,0,1.5-1.15V1.15a1.55,1.55,0,0,0-3,0V346.93A1.36,1.36,0,0,0,178.52,348.08Z" transform="translate(-2.32 0)"/><path d="M47.22,283.9a4.3,4.3,0,0,0,3.29-1.52c4.93-5.85,15.23-14.55,23.38-14.55,5.5,0,10,2.64,14.74,5.43,5.24,3.08,10.67,6.27,17.78,6.27,18.31,0,29.68-11.83,29.68-30.87a42.35,42.35,0,0,0-2.6-15.23,23.09,23.09,0,0,0,1.63-8.75,25.94,25.94,0,0,0-8.41-18.86c-4.21-3.91-11.92-8.58-24.69-8.58-9.8,0-15.61,5.81-20.74,10.93-5.32,5.32-9.92,9.92-18.87,9.92-6.22,0-8.42-5.87-8.42-10.89a19.63,19.63,0,0,1,5.45-13.46c4.2-4.39,10.38-6.71,17.87-6.71,22.75,0,31.81-7.53,35.4-13.84s3.35-14.4-.81-21.38a3.37,3.37,0,0,0-.31-.46c-7.63-9.76-16.22-5.64-22.48-2.64-5.64,2.7-10.51,5-16.44,1.58a15.3,15.3,0,0,1-7.36-11.23c-.59-4.2.52-8.24,3-10.8,2-2,4.51-3.29,7.46-4.74,8.11-4,18.16-8.91,18.44-32.55l6-6a2.86,2.86,0,0,0,.54-3.3l-8-15.94a2.86,2.86,0,0,0-5.12,0l-8,15.94a2.86,2.86,0,0,0,.54,3.3l5.43,5.43c-.1,18.74-6.37,21.83-13.63,25.38-3.39,1.66-6.89,3.37-9.89,6.52-4.32,4.51-6.24,11-5.27,17.92a23.83,23.83,0,0,0,11.54,17.46c9.86,5.74,18.3,1.7,24.47-1.25,6.86-3.29,8.86-3.73,11.84,0,1.06,1.87,3.56,7.3.59,12.52-3.48,6.13-13.41,9.5-27.94,9.5-12.5,0-20,5.09-24.08,9.36a28.32,28.32,0,0,0-7.83,19.4,21.64,21.64,0,0,0,4.18,13.27,15.89,15.89,0,0,0,12.83,6.21c12.5,0,19.4-6.9,24.94-12.44,4.71-4.7,8.42-8.41,14.67-8.41,7.9,0,14.42,2.17,18.85,6.28a17.55,17.55,0,0,1,5.5,10.33,23.55,23.55,0,0,0-16.18-6.91c-8.84,0-15,5.75-15,14,0,11.15,8.85,17.17,17.17,17.17A24.25,24.25,0,0,0,127,241.94a39.83,39.83,0,0,1,.55,6.72c0,8.32-2.74,22.29-21.09,22.29-4.77,0-8.79-2.36-13.43-5.09-5.27-3.1-11.25-6.61-19.09-6.61C62,259.25,49.46,270.3,44,276.84a4.29,4.29,0,0,0,3.27,7.06Zm65.12-45.8c-3,0-8.58-1.79-8.58-8.58,0-5,4.92-5.4,6.43-5.4a15.53,15.53,0,0,1,11.14,5.46,20,20,0,0,1,2.51,3.46C121.56,236,117.78,238.1,112.34,238.1Z" transform="translate(-2.32 0)"/><path d="M222.4,208.68a19.34,19.34,0,0,0,26.41,7.07l14.25-8.23V224a19.34,19.34,0,0,0,38.67,0V207.53L316,215.76a19.33,19.33,0,1,0,19.33-33.49L321.05,174l14.25-8.23A19.33,19.33,0,1,0,316,132.33l-14.24,8.23V124.1a19.34,19.34,0,0,0-38.67,0v16.47l-14.25-8.23a19.33,19.33,0,1,0-19.33,33.48L243.72,174l-14.25,8.23A19.34,19.34,0,0,0,222.4,208.68Zm45.85-59.1a28.25,28.25,0,1,1-10.34,38.59A28.26,28.26,0,0,1,268.25,149.58Z" transform="translate(-2.32 0)"/><path d="M183.8,460H165.36v57.7h18.52c20.43,0,33.69-11.89,33.69-29.65C217.57,470.59,205.75,460,183.8,460Zm-.23,51.45h-9.75v-45.2h9.75c17.84,0,25.39,8,25.39,21.88S199.05,511.44,183.57,511.44Z" transform="translate(-2.32 0)"/><path d="M93,460h-7.7c-.45,1.45-1,2.82-1.6,4.5l-17,45.05c-.91,2.51-2.13,5.64-3,8.15h8.61c.76-2.28,1.75-5.26,2.67-7.85l2.59-7.24h22.79l2.59,7.32c.92,2.59,1.83,5.41,2.59,7.77h9.07c-.84-2.36-2-5.26-2.89-7.77ZM79.68,496.5,89,470.2l9.22,26.3Z" transform="translate(-2.32 0)"/><path d="M29.53,494.9l24-.07c-2,10.44-9.07,17.3-21.42,17.3-14.1,0-21.34-10.52-21.34-23.25,0-13.42,8.39-23.17,22.18-23.17,9.53,0,17.08,4.19,19.59,12.12h8.39C58,466.09,47.29,459,33.12,459c-18.22,0-30.8,11.66-30.8,30,0,16.54,10.52,29.8,28.89,29.8,11.36,0,19.67-5,23.63-13.41h.38l.46,12.27h6.1v-29l-32.32.07Z" transform="translate(-2.32 0)"/><path d="M232.55,511.59v-21h5.64c4.58,0,9.23,0,15.93.08v-6.25c-6.7.07-11.35.07-15.93.07h-5.64V466.09h9.76c3.58,0,8.84,0,15.62.07V460H224.09v57.7h34.38v-6.17c-6.41.07-12.2.07-15.86.07Z" transform="translate(-2.32 0)"/><path d="M338.06,484.69c-8.69-3.13-14.48-5-14.48-10.83,0-5.18,4-8.23,11.35-8.23,8,0,13.19,4.27,14.18,10.9h8.08c-1.45-11-10-17.45-22-17.45-11.36,0-19.82,5.33-19.74,15.16,0,9.23,6.71,12.73,17.91,16.85,11.36,4.12,16.39,6.1,16.39,12,0,6.32-4.57,9.37-12.5,9.37-8.84,0-14.33-4.88-15.55-13.49h-8.16c1.38,12.58,10.22,20.05,23.63,20.05,12.27,0,20.58-6,20.58-16.85C357.72,492.16,350.18,489,338.06,484.69Z" transform="translate(-2.32 0)"/><path d="M157.48,474.85c0-9.52-7.39-14.86-20.66-14.86H118.68v57.7h8.46v-26.3h7.24l17.46,26.3h9.37v-.53L142.16,490.4C151.61,489.11,157.48,483.32,157.48,474.85Zm-30.34,10.52V466.09h8.54c9.53,0,13.57,2.82,13.57,9.07,0,6.78-4.35,10.21-14.26,10.21Z" transform="translate(-2.32 0)"/><polygon points="298.25 470.2 298.25 505.27 270.81 459.99 261.97 459.99 261.97 470.2 261.97 507.48 261.97 517.69 270.28 517.69 270.28 507.48 270.28 472.26 297.72 517.69 306.56 517.69 306.56 470.2 306.56 459.99 298.25 459.99 298.25 470.2"/><path d="M193,449.16c-3.81-1.53-4.34-4-4.34-9.84V425.15l4.42-4.58,22.33,29h9.68v-.46l-27.13-33.46,17.45-17.92a17.55,17.55,0,0,1,9.07-5.18v-.68h-10a38.26,38.26,0,0,1-5.64,7.54l-20.2,21.5V402.05c0-6.25.53-8.31,4.34-9.83v-.38H175.74v.38c3.81,1.52,4.42,3.58,4.42,9.83v37.27c0,5.87-.61,8.31-4.42,9.84v.38H193Z" transform="translate(-2.32 0)"/><path d="M226.53,449.16v.38h39.94v-7.63c-7.24,2.75-13,4.58-18.75,4.58h-8.39V420.88h4.27a124.12,124.12,0,0,1,17.23,1.06v-5.18c-6.1.53-13,1.07-17.23,1.07h-4.27V394.88H246c4.88,0,10.06,1.38,18.75,4v-7.08H226.53v.38c3.73,1.52,4.34,3.58,4.34,9.83v37.27C230.87,445.19,230.26,447.63,226.53,449.16Z" transform="translate(-2.32 0)"/><path d="M291.52,416.15c-9.3-4.34-14.49-7.09-14.49-13.26,0-5.49,3.59-8.92,10.75-8.92,7.78,0,12.58,5.56,13.57,13.42h8.23c-2-10.75-10.67-16.55-21.65-16.55-10.44,0-18.37,5.19-18.29,14.56,0,8.69,6.63,12.66,16.85,17.46,11.13,5.11,16.23,8,16.23,14.63s-4.72,10.14-11.81,10.14c-9.38,0-14.79-6.33-15.25-16h-8.31c1.38,12.5,10.83,19.14,23.33,19.14,11.36,0,19.44-5.72,19.44-15.71C310.12,425.3,302.64,421.49,291.52,416.15Z" transform="translate(-2.32 0)"/><path d="M131.67,449.31c-3.58-1.45-4.19-3.51-2.44-8.54l3.43-9.83H155l3.43,10c1.53,4.5,1,6.86-3,8.31v.31h18.91v-.38c-3.2-1.38-4.8-3.66-6.56-8.31l-18.29-49h-9a6,6,0,0,1,.23,5.25l-15.55,43.45c-1.9,5.26-4.27,7.24-7.39,8.69v.31h13.95Zm12.12-50.61,10.13,29.19H133.73Z" transform="translate(-2.32 0)"/><path d="M48,416.15c-9.3-4.34-14.49-7.09-14.49-13.26,0-5.49,3.59-8.92,10.75-8.92,7.78,0,12.58,5.56,13.57,13.42H66.1c-2-10.75-10.67-16.55-21.65-16.55C34,390.84,26.08,396,26.16,405.4c0,8.69,6.63,12.66,16.85,17.46,11.12,5.11,16.23,8,16.23,14.63s-4.72,10.14-11.81,10.14c-9.38,0-14.79-6.33-15.25-16H23.87c1.38,12.5,10.83,19.14,23.33,19.14,11.36,0,19.43-5.72,19.43-15.71C66.63,425.3,59.16,421.49,48,416.15Z" transform="translate(-2.32 0)"/><path d="M119.33,391.84H106.68v.38c4.11,1.6,4.72,4.11,4.72,10.29v38.11L80,391.84H69.63v.38c3.13,1.52,3.51,3.58,3.51,9.83v36.82c0,6.17-.46,8.68-4,10.29v.38H82.06v-.38c-4.35-1.61-5-4.12-5-10.29V401.21l31,48.33h7.32v-47c0-6.18.53-8.69,4-10.29Z" transform="translate(-2.32 0)"/><path d="M331.39,440.24c0-5.29-3.58-8.51-10.24-8.51h-5.6v17.51h5.62C327.37,449.24,331.39,445.63,331.39,440.24Zm-13.27,7.1V433.63h3c5.41,0,7.7,2.43,7.7,6.64s-3,7.07-7.7,7.07Z" transform="translate(-2.32 0)"/><polygon points="324.84 414.65 324.84 425.29 316.51 411.55 313.83 411.55 313.83 414.65 313.83 425.96 313.83 429.06 316.35 429.06 316.35 425.96 316.35 415.28 324.68 429.06 327.36 429.06 327.36 414.65 327.36 411.55 324.84 411.55 324.84 414.65"/><path d="M329.76,406.52l-5.66-15.15h-2.34c-.14.44-.3.86-.48,1.37l-5.16,13.67c-.28.76-.65,1.71-.93,2.47h2.62c.23-.69.53-1.59.81-2.38l.78-2.2h6.92l.78,2.22c.28.79.56,1.64.79,2.36h2.75C330.39,408.16,330,407.29,329.76,406.52Zm-9.71-4.07,2.82-8,2.8,8Z" transform="translate(-2.32 0)"/></g><symbol id="sg-wordmark" viewBox="-2 389 359.4 132"><use href="#sg-logo"/></symbol><symbol id="sg-snake" viewBox="34 58 106 232"><use href="#sg-logo"/></symbol><symbol id="sg-flower" viewBox="212 99 138 150"><use href="#sg-logo"/></symbol><symbol id="sg-mark" viewBox="30 -4 322 358"><use href="#sg-logo"/></symbol></defs></svg>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="jp-mark" viewBox="0 0 100 100"><path d="M31,38 L69,38 L69,76 C69,88 60,94 50,94 C40,94 31,88 31,76 Z" fill="var(--jp-face,#fd0001)"/><path d="M50,6 C65,6 75,15 79,30 C83,45 89,62 95,77 C87,81 76,80 69,74 C70,62 70,50 69,39 C61,35 39,35 31,39 C30,50 30,62 31,74 C24,80 13,81 5,77 C11,62 17,45 21,30 C25,15 35,6 50,6 Z" fill="var(--jp-hair,#e8cd8c)"/><path d="M38.6,64.6 C36.2,62.6 33.4,64.4 34.6,67.2 C35.8,70 40,71.2 43.6,70.2 C46.4,69.4 48.4,68.2 50,67.4 C51.6,68.2 53.6,69.4 56.4,70.2 C60,71.2 64.2,70 65.4,67.2 C66.6,64.4 63.8,62.6 61.4,64.6" fill="none" stroke="var(--jp-hair,#e8cd8c)" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/><path d="M51,51 L48.5,62 L52,62.5" fill="none" stroke="var(--jp-ink,#0b0b0b)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="bob" viewBox="0 0 64 64">
+      <path d="M32 5C17 5 7 16 7 31c0 10 4 17 11 19V31c3-7 9-10 14-10s11 3 14 10v19c7-2 11-9 11-19C57 16 47 5 32 5Z" fill="currentColor"/>
+      <path d="M19 30c4-6 9-8 13-8s9 2 13 8" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+      <path d="M22 44c3-3 6-3 10-1 4-2 7-2 10 1M22 44c-3 1-4-2-2-3M42 44c3 1 4-2 2-3" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="masthead" id="masthead">
+  <a class="brand" href="#top" aria-label="Snakes and Gardens, back to the top">
+    <svg class="brand-mark" aria-hidden="true"><use href="#sg-mark"/></svg>
+    <svg class="brand-word" aria-hidden="true"><use href="#sg-wordmark"/></svg>
+  </a>
+  <nav class="reels" aria-label="Chapters">
+    <a href="#cold-open" data-reel="walkon"><b>I</b><span>The Walk-On</span></a>
+    <a href="#face" data-reel="face"><b>II</b><span>The Face</span></a>
+    <a href="#money" data-reel="money"><b>III</b><span>The Money</span></a>
+    <a href="#teammate" data-reel="teammate"><b>IV</b><span>Nobody's Teammate</span></a>
+    <a href="#questions" data-reel="questions"><b>V</b><span>The Questions</span></a>
+    <a href="#coda" data-reel="coda"><b>VI</b><span>Two Potentials</span></a>
+  </nav>
+  <div class="controls">
+    <button type="button" id="sound-toggle" aria-pressed="false" class="waiting"><span class="dot" aria-hidden="true"></span><span class="label">Tap for sound</span></button>
+    <button type="button" id="motion-toggle" aria-pressed="true"><span class="label">Autoplay on</span></button>
+  </div>
+  <div class="progress" aria-hidden="true"><i></i></div>
+</header>
+
+<main id="top">
+
+<section class="cover-card cover-card--titled" id="cover" aria-labelledby="cover-h">
+  <picture class="cover-medallion">
+    <source media="(min-aspect-ratio: 1/1)" srcset="assets/img/cover/cover-medallion-landscape.webp" width="1100" height="1460">
+    <img src="assets/img/cover/cover-medallion-portrait.webp" width="1100" height="1594" fetchpriority="high" alt="Jean Phil drawn as a playing card: his blond bob and curled mustache, engraved in an oval medallion on a red lattice of snakes, flowers and eyes.">
+  </picture>
+  <div class="cover-title">
+    <p class="cover-kick mono">Snakes &amp; Gardens · Internal edition</p>
+    <h1 class="cover-h" id="cover-h">Nobody's Teammate</h1>
+    <p class="cover-sub">Why self-sovereign agents are about to make the internet behave very strangely.</p>
+    <p class="cover-date mono">An early signal · October 2026</p>
+  </div>
+  <div class="cover-cta">
+    <a class="cover-scroll" href="#cold-open"><span>Scroll</span><i aria-hidden="true"></i></a>
+  </div>
+</section>
+
+<!-- ============ I · THE WALK-ON ============ -->
+<section class="scrolly cold-open cold-open--wide" id="cold-open" data-scrolly data-reel-section="walkon" aria-label="I, The Walk-On">
+  <div class="stage">
+    <div class="stage-bg" style="--poster:url('assets/media/walkon-ours-poster.webp')"></div>
+    <figure class="stage-media is-active" data-key="walkon">
+      <video data-auto muted playsinline loop preload="metadata" poster="assets/media/walkon-ours-poster.webp" aria-label="Our labeled AI version of the keynote walk-on, with Jean Phil in Anurag Dhingra's place">
+        <source src="assets/media/walkon-ours.mp4" type="video/mp4">
+      </video>
+    </figure>
+    <p class="credit-chip credit-chip--cold mono">Our labeled AI version · keynote, Oct 7, 2026 · made by Snakes &amp; Gardens</p>
+    <button type="button" class="sound-cta mono" id="sound-cta" hidden>Tap for sound</button>
+  </div>
+  <div class="beats">
+    <div class="beat beat--subtitle beat--small" data-show="walkon"><p>October 7, 2026. Anurag Dhingra takes the stage at a conference keynote.</p></div>
+    <div class="beat beat--subtitle" data-show="walkon"><p>That isn't him.</p></div>
+    <div class="beat beat--subtitle beat--small" data-show="walkon"><p>It's <a class="xref" href="https://www.tiktok.com/@jean_philanthrope" target="_blank" rel="noopener">Jean Phil</a>, a face that went viral on TikTok in September. We put him there the same day, using a phone video we shot in the audience.</p></div>
+  </div>
+</section>
+
+<section class="swap-section swap-section--wide frame" id="swap" aria-labelledby="swap-h">
+  <div class="swap-text">
+    <p class="frame-head" id="swap-h">Drag the line to put Anurag back.</p>
+    <p class="frame-sub">Same room. Same second. Same sound.</p>
+  </div>
+  <figure class="swap" id="swap-figure">
+    <div class="swap-frame" style="--pos:2%">
+      <video id="swap-under" muted playsinline loop preload="none" poster="assets/media/walkon-real-poster.webp" aria-label="What happened: Anurag Dhingra's walk-on at a conference keynote, filmed from the audience">
+        <source src="assets/media/walkon-real.mp4" type="video/mp4">
+      </video>
+      <span class="swap-tag swap-tag--l mono">Real</span>
+      <div class="swap-over">
+        <video id="swap-over" muted playsinline loop preload="none" poster="assets/media/walkon-ours-poster.webp" aria-label="Our labeled AI version: Jean Phil in Anurag Dhingra's place">
+          <source src="assets/media/walkon-ours.mp4" type="video/mp4">
+        </video>
+        <span class="swap-tag swap-tag--r mono">Ours</span>
+      </div>
+      <div class="swap-handle" aria-hidden="true"><svg viewBox="0 0 100 100"><use href="#jp-mark"/></svg></div>
+      <input type="range" id="swap-range" min="0" max="100" value="2" aria-label="Replacement slider: left of the line is what happened, right of it is our labeled AI version">
+      <button type="button" class="swap-play mono" id="swap-play" aria-pressed="false">▶ Play both</button>
+    </div>
+    <figcaption class="mono">Left of the line: what happened, from our phone in the audience. Right: our labeled AI version.</figcaption>
+  </figure>
+  <p class="swap-after" id="swap-after" aria-live="polite">Nothing in the frame tells you which one happened. Ours says so only because we added a label.</p>
+</section>
+
+<section class="slide">
+  <div class="slide-in">
+    <p class="big">The next one won't come with a label.</p>
+  </div>
+</section>
+
+<section class="slide slide--paper">
+  <div class="slide-in">
+    <p>A walk-on is one of the most human moments in business: a person, a name, a room that came to hear them. Within hours, any moment like it can be recast, resold and retold by someone you'll never meet.</p>
+    <p class="big">Or by something.</p>
+    
+    <aside class="hook" data-hook="1">
+      <p class="hook-kick mono">Hook to borrow</p>
+      <p class="hook-line">Every keynote is now raw material.</p>
+      <p class="hook-fact">We recast a keynote walk-on the same day it happened, from one phone video. <a class="hook-src mono" href="#swap" target="_blank" rel="noopener">The labeled clip ↗</a></p>
+      <button type="button" class="hook-copy mono">Copy</button>
+    </aside>
+  </div>
+</section>
+
+<!-- ============ TITLE ============ -->
+<section class="title-card title-card--nt" aria-labelledby="title">
+  <div class="title-grid">
+    <svg class="title-wordmark" role="img" aria-label="Snakes and Gardens"><use href="#sg-wordmark"/></svg>
+    <p class="eyebrow mono"><span>Internal edition</span><span>October 7, 2026</span></p>
+    <h1 id="title"><span>Nobody's</span> <span>Teammate</span></h1>
+    <ol class="reel-index mono" aria-label="Contents">
+      <li><a href="#cold-open">I · The Walk-On</a></li>
+      <li><a href="#face">II · The Face</a></li>
+      <li><a href="#money">III · The Money</a></li>
+      <li><a href="#teammate">IV · Nobody's Teammate</a></li>
+      <li><a href="#questions">V · The Questions</a></li>
+      <li><a href="#coda">VI · Two Potentials</a></li>
+    </ol>
+  </div>
+  <figure class="title-art">
+    <div class="orbit" aria-hidden="true"></div>
+    <div class="glitch" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    <img src="assets/brand/bust-jean-phil.webp" alt="AI-assisted illustration of a marble bust with Jean Phil's bob and curled mustache, wearing black smart glasses" width="720" height="900">
+    <figcaption class="mono prompt" aria-hidden="true">
+      Personnel file:<br>
+      Role: teammate?<br>
+      Manager: none<br>
+      Badge: none<br>
+      Owner: <span class="blink">unknown</span>
+    </figcaption>
+  </figure>
+  <p class="art-credit mono">AI illustration: Snakes &amp; Gardens · Jean Phil: <a href="https://www.tiktok.com/@jean_philanthrope" target="_blank" rel="noopener">@jean_philanthrope ↗</a></p>
+</section>
+
+<section class="reel-card" id="face" data-reel-section="face" aria-labelledby="face-h">
+  <p class="numeral" aria-hidden="true">II</p>
+  <h2 id="face-h">The Face</h2>
+  <p class="reel-line">He showed up on September 17. Nobody knows from where.</p>
+</section>
+
+<section class="scrolly" data-scrolly aria-label="Meet Jean Phil">
+  <div class="stage">
+    <div class="stage-bg" style="--poster:url('assets/media/jean-phil-street-poster.webp')"></div>
+    <figure class="stage-media is-active" data-key="street">
+      <video data-auto muted playsinline loop preload="metadata" poster="assets/media/jean-phil-street-poster.webp" aria-label="Jean Phil on a city street in a houndstooth jacket and striped tie">
+        <source src="assets/media/jean-phil-street.mp4" type="video/mp4">
+      </video>
+      <figcaption class="credit-chip mono">Jean Phil · <a href="https://www.tiktok.com/@jean_philanthrope/video/7686908382413884704" target="_blank" rel="noopener">@jean_philanthrope ↗</a></figcaption>
+    </figure>
+    <figure class="stage-media stage-media--grid" data-key="own">
+      <p class="grid-tag mono">His own account · <a href="https://www.tiktok.com/@jean_philanthrope" target="_blank" rel="noopener">@jean_philanthrope ↗</a><span class="grid-hint"><span class="grid-hint-sep"> · </span>tap a clip to hear it</span></p>
+      <div class="grid4">
+        <figure>
+          <video data-auto muted playsinline loop preload="none" poster="assets/media/jp-cafe-poster.webp" aria-label="Jean Phil at a café terrace with espresso and a croissant, shadowboxing"><source src="assets/media/jp-cafe.mp4" type="video/mp4"></video>
+          <button type="button" class="cell-hear" aria-pressed="false" aria-label="Hear the café clip"></button>
+          <figcaption class="cell-chip mono"><a href="https://www.tiktok.com/@jean_philanthrope/video/7688017368492133665" target="_blank" rel="noopener">Café · 6.4M ↗</a></figcaption>
+        </figure>
+        <figure>
+          <video data-auto muted playsinline loop preload="none" poster="assets/media/jp-oysters-poster.webp" aria-label="Jean Phil with a platter of oysters in a brasserie, shadowboxing"><source src="assets/media/jp-oysters.mp4" type="video/mp4"></video>
+          <button type="button" class="cell-hear" aria-pressed="false" aria-label="Hear the oysters clip"></button>
+          <figcaption class="cell-chip mono"><a href="https://www.tiktok.com/@jean_philanthrope/video/7688392643646131489" target="_blank" rel="noopener">Oysters · 6.2M ↗</a></figcaption>
+        </figure>
+        <figure>
+          <video data-auto muted playsinline loop preload="none" poster="assets/media/jp-eiffel-poster.webp" aria-label="Jean Phil on a Paris street with the Eiffel Tower behind him, shadowboxing"><source src="assets/media/jp-eiffel.mp4" type="video/mp4"></video>
+          <button type="button" class="cell-hear" aria-pressed="false" aria-label="Hear the Eiffel Tower clip"></button>
+          <figcaption class="cell-chip mono"><a href="https://www.tiktok.com/@jean_philanthrope/video/7689129028762078497" target="_blank" rel="noopener">Eiffel Tower · 1.6M ↗</a></figcaption>
+        </figure>
+        <figure>
+          <video data-auto muted playsinline loop preload="none" poster="assets/media/jp-steps-poster.webp" aria-label="Jean Phil in close-up, then shadowboxing on the steps of a columned building"><source src="assets/media/jp-steps.mp4" type="video/mp4"></video>
+          <button type="button" class="cell-hear" aria-pressed="false" aria-label="Hear the steps clip"></button>
+          <figcaption class="cell-chip mono"><a href="https://www.tiktok.com/@jean_philanthrope/video/7690240648670088481" target="_blank" rel="noopener">Steps · 2.2M ↗</a></figcaption>
+        </figure>
+      </div>
+    </figure>
+    <figure class="stage-media stage-media--grid" data-key="everywhere">
+      <p class="grid-tag mono">Other accounts<span class="grid-hint"><span class="grid-hint-sep"> · </span>tap a clip to hear it</span></p>
+      <div class="grid4">
+        <figure>
+          <video data-auto muted playsinline loop preload="none" poster="assets/media/derivative-bartender-poster.webp" aria-label="Jean Phil flipping bottles behind a bar, posted by @jeanphilbonjour"><source src="assets/media/derivative-bartender.mp4" type="video/mp4"></video>
+          <button type="button" class="cell-hear" aria-pressed="false" aria-label="Hear @jeanphilbonjour&#x27;s clip"></button>
+          <figcaption class="cell-chip mono"><a href="https://www.tiktok.com/@jeanphilbonjour" target="_blank" rel="noopener">@jeanphilbonjour ↗</a></figcaption>
+        </figure>
+        <figure>
+          <video data-auto muted playsinline loop preload="none" poster="assets/media/derivative-darts-poster.webp" aria-label="Jean Phil throwing darts at a televised match, posted by @odette_boulard"><source src="assets/media/derivative-darts.mp4" type="video/mp4"></video>
+          <button type="button" class="cell-hear" aria-pressed="false" aria-label="Hear @odette_boulard&#x27;s clip"></button>
+          <figcaption class="cell-chip mono"><a href="https://www.tiktok.com/@odette_boulard" target="_blank" rel="noopener">@odette_boulard ↗</a></figcaption>
+        </figure>
+        <figure>
+          <video data-auto muted playsinline loop preload="none" poster="assets/media/derivative-marlene-poster.webp" aria-label="Jean Phil dancing with an older woman in the same blond bob, posted by @marlene.phil"><source src="assets/media/derivative-marlene.mp4" type="video/mp4"></video>
+          <button type="button" class="cell-hear" aria-pressed="false" aria-label="Hear @marlene.phil&#x27;s clip"></button>
+          <figcaption class="cell-chip mono"><a href="https://www.tiktok.com/@marlene.phil" target="_blank" rel="noopener">@marlene.phil ↗</a></figcaption>
+        </figure>
+        <figure>
+          <video data-auto muted playsinline loop preload="none" poster="assets/media/derivative-baby-poster.webp" aria-label="A baby Jean Phil shadowboxing on a street corner, posted by @babyjeanphil"><source src="assets/media/derivative-baby.mp4" type="video/mp4"></video>
+          <button type="button" class="cell-hear" aria-pressed="false" aria-label="Hear @babyjeanphil&#x27;s clip"></button>
+          <figcaption class="cell-chip mono"><a href="https://www.tiktok.com/@babyjeanphil" target="_blank" rel="noopener">@babyjeanphil ↗</a></figcaption>
+        </figure>
+      </div>
+    </figure>
+  </div>
+  <div class="beats">
+    <div class="beat" data-show="street">
+      <h3 class="beat-head">Meet <a class="xref" href="https://www.tiktok.com/@jean_philanthrope" target="_blank" rel="noopener">Jean Phil</a>.</h3>
+      <p>A blond bob shaped like a bell. A mustache curled at both ends, like it knows something. Brown houndstooth, striped tie.</p>
+      <p class="big">On his own account, he does one thing.</p>
+    </div>
+    <div class="beat beat--low beat--wide" data-show="own">
+      <h3 class="beat-head">He boxes the air.</h3>
+      <p>At a café. Over oysters. Under the Eiffel Tower. One clip passed 5.6 million views in three days, <a class="xref" href="https://trending.knowyourmeme.com/editorials/guides/who-is-jean-philanthrope-and-is-he-ai-the-mysterious-frenchman-named-jean-phil-shadowboxing-across-social-media-explained" target="_blank" rel="noopener">Know Your Meme</a> reported.</p>
+    </div>
+    <div class="beat beat--low beat--phone beat--phone-head" data-show="own">
+      <h3 class="beat-head">He boxes the air.</h3>
+    </div>
+    <div class="beat beat--low beat--phone" data-show="own">
+      <p>At a café. Over oysters. Under the Eiffel Tower. One clip passed 5.6 million views in three days, <a class="xref" href="https://trending.knowyourmeme.com/editorials/guides/who-is-jean-philanthrope-and-is-he-ai-the-mysterious-frenchman-named-jean-phil-shadowboxing-across-social-media-explained" target="_blank" rel="noopener">Know Your Meme</a> reported.</p>
+    </div>
+    <div class="beat beat--low beat--wide" data-show="everywhere">
+      <h3 class="beat-head">Then he turned up everywhere else.</h3>
+      <p>Behind a bar. At a darts match on TV. As a baby.</p>
+      <p class="big">None of it on his account.</p>
+    </div>
+    <div class="beat beat--low beat--phone beat--phone-head" data-show="everywhere">
+      <h3 class="beat-head">Then he turned up everywhere else.</h3>
+    </div>
+    <div class="beat beat--low beat--phone" data-show="everywhere">
+      <p>Behind a bar. At a darts match on TV. As a baby.</p>
+      <p class="big">None of it on his account.</p>
+    </div>
+  </div>
+</section>
+
+<section class="vote frame" id="vote" aria-labelledby="vote-h">
+  <p class="frame-head" id="vote-h">Is he real? Vote.</p>
+  <figure class="vote-clip">
+    <video data-auto muted playsinline loop preload="none" poster="assets/media/jp-cafe-poster.webp" aria-label="Jean Phil at a café terrace with espresso and a croissant, shadowboxing"><source src="assets/media/jp-cafe.mp4" type="video/mp4"></video>
+    <figcaption class="credit-chip mono">Jean Phil · <a href="https://www.tiktok.com/@jean_philanthrope/video/7688017368492133665" target="_blank" rel="noopener">@jean_philanthrope ↗</a></figcaption>
+  </figure>
+  <div class="vote-buttons" role="group" aria-label="Your vote">
+    <button type="button" class="vote-btn" data-vote="real" aria-pressed="false">Real</button>
+    <button type="button" class="vote-btn" data-vote="ai" aria-pressed="false">AI</button>
+  </div>
+  <p class="vote-result" id="vote-result" aria-live="polite"></p>
+</section>
+
+<section class="slide slide--paper slide--tako" aria-label="TikTok's AI, first answer">
+  <div class="slide-in">
+    <a class="tako-illus" href="assets/evidence/K136.webp" data-exhibit="assets/evidence/K136.webp" data-caption="The end of Tako&#x27;s first answer, recorded from the comment thread. Account details cropped."><svg class="tako-svg" viewBox="0 0 400 490" role="img" aria-label="Drawing of the comment thread: a viewer asks “@TikTok Tako is this ai?” and TikTok Tako replies “… The visual analysis shows no consistent AI artifacts … The unusual appearance comes from an actual costume or prosthetic wig, not AI generation. … Overall, the strongest evidence points to this being a real, physically filmed skit …”"><defs><linearGradient id="fade7" x1="0" y1="0" x2="0" y2="1"><stop offset=".88" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient><mask id="m7"><rect width="400" height="490" fill="url(#fade7)"/></mask></defs><g mask="url(#m7)"><path d="M50.8 94.1C50.5 93.4 49.8 91.2 49.4 89.9C48.9 88.5 48.1 87.1 48.1 85.8C48.1 84.4 48.7 82.9 49.3 81.6C49.9 80.4 50.7 79.1 51.7 78.1C52.6 77.2 53.9 76.5 55.1 75.7C56.3 75.0 57.7 73.8 59.0 73.7C60.4 73.5 61.9 74.5 63.3 75.0C64.6 75.5 66.0 76.0 67.1 76.8C68.3 77.6 69.3 78.7 70.1 79.9C71.0 81.1 72.2 82.4 72.3 83.8C72.5 85.2 71.6 86.8 71.2 88.2C70.8 89.6 70.7 91.1 70.1 92.4C69.4 93.6 68.3 94.7 67.2 95.7C66.1 96.6 64.8 97.6 63.4 98.1C62.0 98.5 60.3 98.6 58.8 98.4C57.3 98.2 55.6 97.9 54.4 97.2C53.1 96.4 52.3 95.0 51.3 93.8C50.4 92.7 49.3 90.9 48.9 90.3" class="ink faint" pathLength="1"/><path d="M62.4 76.0L70.9 83.1" class="ink faint" pathLength="1"/><path d="M57.5 75.6L69.9 88.2" class="ink faint" pathLength="1"/><path d="M54.5 77.3L68.0 91.5" class="ink faint" pathLength="1"/><path d="M51.7 80.1L66.4 94.4" class="ink faint" pathLength="1"/><path d="M50.0 83.5L62.8 95.5" class="ink faint" pathLength="1"/><path d="M49.9 88.2L58.4 96.8" class="ink faint" pathLength="1"/><path d="M84.0 79.7C85.1 79.5 88.2 78.9 90.6 78.7C93.0 78.6 96.0 78.5 98.1 78.6C100.3 78.7 101.6 78.9 103.4 79.1C105.2 79.2 107.2 79.6 109.1 79.5C110.9 79.4 112.5 78.5 114.3 78.4C116.1 78.3 117.9 78.7 119.9 78.7C121.9 78.7 123.8 78.2 126.3 78.5C128.8 78.8 132.5 80.2 134.8 80.4C137.2 80.5 138.4 79.3 140.4 79.2C142.4 79.1 144.8 79.2 146.8 79.6C148.8 79.9 149.9 81.1 152.3 81.1C154.7 81.2 158.6 80.3 161.3 79.9C163.9 79.5 166.1 78.7 168.2 78.7C170.3 78.6 171.7 79.1 173.6 79.5C175.5 79.9 177.7 81.2 179.7 81.1C181.6 80.9 182.9 78.6 185.3 78.5C187.7 78.3 191.7 79.8 194.1 80.1C196.5 80.4 197.9 80.1 199.7 80.1C201.5 80.1 202.5 79.9 204.8 80.1C207.2 80.3 210.9 81.3 213.7 81.2C216.5 81.0 219.1 79.6 221.5 79.2C223.9 78.9 225.6 78.8 228.0 78.9C230.4 79.1 233.4 80.0 236.1 80.1C238.8 80.2 241.8 79.3 244.2 79.5C246.5 79.6 247.6 80.7 250.1 81.0C252.5 81.3 256.2 81.1 259.0 81.1C261.9 81.1 264.5 81.4 267.2 81.0C269.9 80.7 272.7 79.4 275.2 79.1C277.7 78.9 280.2 79.6 282.3 79.5C284.3 79.4 285.5 78.5 287.4 78.5C289.3 78.4 291.4 78.8 293.5 79.2C295.6 79.6 298.9 80.6 300.0 80.9" class="ink faint" pathLength="1"/><path d="M84.0 93.8C85.5 94.1 89.8 95.6 92.7 95.6C95.7 95.5 99.1 94.0 101.6 93.6C104.0 93.2 105.5 93.2 107.4 93.1C109.4 93.0 111.0 92.7 113.2 93.1C115.5 93.4 118.1 95.1 120.7 95.3C123.4 95.4 126.4 94.0 129.1 93.9C131.8 93.9 134.5 94.9 136.7 95.0C138.9 95.1 139.7 94.5 142.0 94.5C144.4 94.5 147.9 95.0 150.7 94.9C153.5 94.8 156.4 93.9 158.7 93.9C161.0 93.9 162.4 94.8 164.4 94.9C166.4 95.1 168.2 95.2 170.7 95.0C173.3 94.8 177.0 93.6 179.6 93.7C182.2 93.7 183.8 95.6 186.2 95.4C188.6 95.3 191.9 93.4 194.1 92.9C196.4 92.5 197.3 92.5 199.6 92.9C202.0 93.2 205.9 94.6 208.2 95.0C210.6 95.3 211.4 95.1 213.8 95.0C216.3 95.0 220.2 94.7 222.8 94.5C225.3 94.4 227.9 94.4 229.2 94.2C230.4 93.9 229.9 93.2 230.0 93.0" class="ink faint" pathLength="1"/><path d="M71.7 530.4C71.5 531.0 71.0 533.1 70.5 534.4C70.0 535.8 69.5 537.3 68.5 538.2C67.6 539.2 66.1 539.8 64.8 540.3C63.5 540.8 62.1 541.1 60.7 541.3C59.4 541.4 57.8 541.6 56.5 541.2C55.2 540.8 53.9 539.9 52.8 539.1C51.6 538.3 50.3 537.3 49.5 536.1C48.8 534.9 48.4 533.4 48.1 531.9C47.8 530.5 47.6 528.9 47.9 527.5C48.2 526.0 48.9 524.6 49.7 523.4C50.5 522.1 51.6 520.9 52.8 520.0C53.9 519.1 55.4 518.2 56.8 517.9C58.2 517.6 59.9 517.9 61.3 518.2C62.7 518.5 64.0 519.0 65.4 519.6C66.8 520.1 68.6 520.5 69.5 521.6C70.4 522.7 70.3 524.6 70.8 526.0C71.2 527.4 72.2 528.7 72.3 530.2C72.4 531.6 71.5 533.8 71.3 534.5" class="ink faint" pathLength="1"/><path d="M62.1 519.9L70.8 527.5" class="ink faint" pathLength="1"/><path d="M58.0 520.2L69.8 532.2" class="ink faint" pathLength="1"/><path d="M54.4 521.9L68.8 535.9" class="ink faint" pathLength="1"/><path d="M51.9 524.4L66.1 538.4" class="ink faint" pathLength="1"/><path d="M49.7 526.9L62.3 539.8" class="ink faint" pathLength="1"/><path d="M49.1 532.3L58.1 540.6" class="ink faint" pathLength="1"/><path d="M84.0 524.4C85.3 524.3 89.6 523.9 91.7 524.0C93.8 524.1 94.6 524.9 96.7 525.0C98.9 525.0 102.2 524.1 104.7 524.0C107.3 523.9 109.8 524.4 111.9 524.5C113.9 524.6 115.3 525.1 117.1 524.8C119.0 524.4 121.1 522.6 123.1 522.6C125.2 522.6 127.2 524.4 129.2 524.7C131.2 525.1 132.6 524.9 135.0 524.8C137.5 524.6 141.4 524.1 143.9 524.0C146.5 523.8 148.1 523.8 150.5 523.9C152.8 524.1 155.7 524.8 158.2 524.9C160.7 524.9 163.5 524.8 165.7 524.5C167.8 524.1 169.1 522.8 171.0 522.9C172.9 522.9 174.9 524.6 177.0 524.8C179.0 525.0 181.3 524.6 183.2 524.2C185.1 523.9 186.4 522.5 188.3 522.6C190.1 522.6 192.0 524.2 194.3 524.6C196.6 524.9 199.8 524.6 202.1 524.6C204.4 524.5 206.1 524.2 208.3 524.1C210.4 523.9 213.1 523.7 215.1 523.9C217.2 524.1 218.7 525.0 220.6 525.3C222.5 525.5 224.0 526.0 226.4 525.5C228.8 525.1 232.5 522.5 235.1 522.5C237.7 522.4 239.4 524.8 242.0 525.0C244.6 525.3 248.4 524.2 250.8 523.8C253.3 523.5 254.4 523.2 256.9 523.1C259.4 522.9 263.0 523.1 265.7 523.1C268.4 523.0 270.6 522.5 273.0 522.9C275.4 523.2 278.0 525.1 280.1 525.4C282.2 525.8 283.6 525.1 285.7 525.0C287.7 525.0 290.2 525.6 292.7 525.2C295.2 524.9 297.8 523.4 300.5 523.1C303.2 522.9 306.8 524.1 309.1 524.0C311.4 523.8 312.4 522.4 314.2 522.4C316.0 522.4 319.0 523.7 320.0 523.9" class="ink faint" pathLength="1"/><path d="M84.0 537.4C84.9 537.4 87.6 537.2 89.6 537.5C91.5 537.8 93.9 538.9 95.8 539.1C97.7 539.3 98.6 539.2 100.8 538.8C103.1 538.4 106.3 536.8 109.2 536.8C112.0 536.8 115.0 538.6 117.9 538.7C120.8 538.8 124.0 537.5 126.5 537.3C129.0 537.2 130.4 537.5 133.0 537.7C135.6 537.8 139.4 538.3 142.0 538.3C144.6 538.3 146.3 538.1 148.4 537.8C150.5 537.5 152.6 536.3 154.5 536.6C156.4 536.8 158.0 538.6 159.9 539.1C161.9 539.5 164.1 539.7 166.1 539.4C168.1 539.1 169.9 537.6 172.1 537.3C174.3 536.9 176.9 536.6 179.1 537.0C181.4 537.4 183.1 539.1 185.6 539.5C188.1 539.8 191.5 539.0 194.2 539.0C196.8 539.0 199.0 539.5 201.7 539.3C204.4 539.2 207.7 538.6 210.4 538.2C213.2 537.7 215.7 536.6 218.3 536.6C221.0 536.5 223.6 537.5 226.2 537.8C228.9 538.2 231.9 538.7 234.3 538.5C236.6 538.2 237.9 536.8 240.4 536.6C242.9 536.3 247.5 536.6 249.1 536.8C250.7 537.0 249.9 537.5 250.0 537.7" class="ink faint" pathLength="1"/><path d="M51.6 7.2L348.4 7.0Q378.0 8.0 378.1 37.7L376.9 538.0Q378.0 568.0 346.9 567.8L51.0 567.0Q22.0 568.0 21.8 538.8L21.1 37.3Q22.0 8.0 52.3 9.1" class="ink" pathLength="1"/><path d="M52.2 7.8L349.1 6.9Q378.0 8.0 378.9 37.5L377.1 537.1Q378.0 568.0 347.5 568.8L51.2 568.2Q22.0 568.0 22.3 537.7L22.1 37.0Q22.0 8.0 50.9 7.3" class="ink" pathLength="1"/><path d="M177.9 21.8Q200.0 22.2 222.1 22.0" class="ink" pathLength="1"/><path d="M178.3 22.2Q200.0 21.8 221.8 22.1" class="ink" pathLength="1"/><path d="M344.4 36.3Q349.0 41.0 353.8 46.5" class="ink" pathLength="1"/><path d="M343.9 36.3Q349.2 40.8 353.6 46.0" class="ink" pathLength="1"/><path d="M354.2 36.3Q349.3 41.3 344.1 46.4" class="ink" pathLength="1"/><path d="M354.2 36.1Q349.1 41.1 344.1 46.0" class="ink" pathLength="1"/><path d="M40.5 58.0Q200.0 59.5 360.2 57.5" class="ink" pathLength="1"/><path d="M40.2 58.5Q200.0 58.9 360.4 57.8" class="ink" pathLength="1"/><path d="M75.0 139.2C75.0 140.1 75.1 142.9 74.8 144.8C74.5 146.6 74.4 148.8 73.4 150.3C72.5 151.8 70.5 152.7 69.0 153.9C67.5 155.0 66.1 156.4 64.3 157.1C62.6 157.7 60.4 157.9 58.6 157.5C56.8 157.2 55.2 155.9 53.6 155.0C52.1 154.0 50.5 153.1 49.3 151.9C48.1 150.6 47.0 149.0 46.4 147.4C45.8 145.8 45.6 143.9 45.5 142.1C45.4 140.3 45.2 138.3 45.8 136.7C46.4 135.0 47.9 133.6 49.1 132.3C50.4 131.0 51.7 129.5 53.2 128.8C54.8 128.0 56.7 128.1 58.5 127.7C60.3 127.4 62.4 126.4 64.1 126.8C65.8 127.2 67.3 128.9 68.7 130.1C70.1 131.3 71.5 132.5 72.6 133.9C73.6 135.4 74.4 137.2 74.8 139.0C75.3 140.7 75.4 143.7 75.5 144.6" class="ink" pathLength="1"/><path d="M46.2 149.5C46.0 148.6 45.3 145.8 45.1 143.9C45.0 142.1 44.9 140.2 45.4 138.4C45.8 136.7 46.5 134.8 47.6 133.4C48.8 132.1 50.6 131.3 52.1 130.3C53.6 129.3 55.0 127.9 56.6 127.5C58.3 127.1 60.3 127.3 62.0 127.7C63.7 128.1 65.2 129.0 66.9 129.7C68.5 130.4 70.8 130.8 72.0 132.1C73.1 133.4 73.2 135.7 73.7 137.4C74.2 139.2 74.9 140.9 74.9 142.7C75.0 144.5 74.8 146.5 74.1 148.2C73.4 149.8 72.1 151.4 70.7 152.6C69.4 153.8 67.7 154.7 66.0 155.4C64.3 156.1 62.6 156.9 60.8 157.0C59.0 157.2 57.1 156.8 55.3 156.3C53.5 155.8 51.5 155.2 50.2 154.0C48.9 152.8 48.4 150.7 47.6 149.1C46.7 147.4 45.5 145.0 45.1 144.2" class="ink" pathLength="1"/><path d="M64.1 129.2L72.8 137.6" class="ink" pathLength="1"/><path d="M59.7 129.4L73.3 142.3" class="ink" pathLength="1"/><path d="M56.2 130.0L72.0 146.1" class="ink" pathLength="1"/><path d="M53.2 131.5L70.5 149.2" class="ink" pathLength="1"/><path d="M51.1 133.9L68.9 150.9" class="ink" pathLength="1"/><path d="M49.1 136.5L66.3 152.6" class="ink" pathLength="1"/><path d="M47.3 139.0L62.5 154.1" class="ink" pathLength="1"/><path d="M46.6 143.0L59.5 155.4" class="ink" pathLength="1"/><path d="M47.9 148.6L53.8 153.4" class="ink" pathLength="1"/><path d="M47.6 139.1L56.4 129.7" class="ink" pathLength="1"/><path d="M47.4 144.3L62.8 129.8" class="ink" pathLength="1"/><path d="M49.0 148.4L66.5 131.2" class="ink" pathLength="1"/><path d="M51.8 151.4L69.8 133.6" class="ink" pathLength="1"/><path d="M55.8 153.8L71.4 137.6" class="ink" pathLength="1"/><path d="M60.7 155.0L72.5 143.1" class="ink" pathLength="1"/><path d="M352.0 149.8C345.4 144.1 348.2 138.4 352.0 142.2C355.8 138.4 358.6 144.1 352.0 149.8" class="ink" pathLength="1"/><path d="M60.6 163.5Q59.6 185.5 59.7 206.4" class="ink" pathLength="1"/><path d="M59.7 163.5Q59.6 185.5 59.9 207.5" class="ink" pathLength="1"/><path d="M59.7 206.5Q75.9 211.4 92.6 215.1" class="ink" pathLength="1"/><path d="M59.5 206.4Q75.9 211.3 92.2 214.9" class="ink" pathLength="1"/><path d="M126.2 221.9C125.5 222.6 123.8 224.9 122.4 226.2C121.0 227.4 119.4 228.9 117.7 229.4C116.0 230.0 114.0 229.2 112.1 229.2C110.3 229.3 108.1 230.3 106.5 229.6C104.9 229.0 104.0 226.9 102.6 225.6C101.1 224.4 99.0 223.7 98.1 222.2C97.2 220.7 97.2 218.4 97.2 216.6C97.1 214.8 97.4 212.9 97.8 211.2C98.2 209.4 98.9 207.7 99.8 206.1C100.7 204.5 101.9 202.6 103.5 201.7C105.0 200.8 107.2 200.9 109.0 200.7C110.9 200.6 112.6 200.6 114.4 200.9C116.1 201.1 118.1 201.2 119.6 202.0C121.2 202.9 122.4 204.5 123.4 206.0C124.4 207.4 125.2 209.1 125.7 210.8C126.1 212.4 126.5 214.3 126.4 216.0C126.2 217.7 125.6 219.4 124.9 221.0C124.1 222.6 122.5 224.7 122.0 225.4" class="ink" pathLength="1"/><path d="M106.4 228.6C105.6 228.2 102.6 227.4 101.4 226.2C100.1 225.0 99.5 223.0 98.8 221.3C98.1 219.6 97.1 217.9 97.0 216.1C96.9 214.4 97.6 212.5 98.2 210.8C98.7 209.1 99.3 207.3 100.4 206.0C101.5 204.6 103.2 203.8 104.7 202.9C106.2 202.0 107.8 201.0 109.5 200.7C111.2 200.4 113.0 200.9 114.8 201.1C116.5 201.4 118.7 201.2 120.2 202.0C121.8 202.8 123.2 204.5 124.1 206.0C125.1 207.5 125.5 209.4 125.9 211.2C126.4 212.9 126.9 214.7 126.9 216.5C126.9 218.3 127.0 220.6 126.1 222.1C125.2 223.6 123.0 224.4 121.6 225.6C120.2 226.8 119.2 228.8 117.6 229.5C116.0 230.3 113.8 230.0 112.0 229.9C110.1 229.8 108.3 229.5 106.6 229.0C104.8 228.4 102.3 226.9 101.5 226.5" class="ink" pathLength="1"/><path d="M104.0 217.0C104.2 215.7 103.7 211.0 105.0 209.0C106.3 207.0 109.7 205.0 112.0 205.0C114.3 205.0 117.7 207.0 119.0 209.0C120.3 211.0 119.8 215.7 120.0 217.0" class="ink" pathLength="1"/><path d="M105.0 217.0C104.8 217.7 103.5 219.7 103.5 221.0C103.5 222.3 104.8 224.3 105.0 225.0" class="ink" pathLength="1"/><path d="M109.5 217.0C109.8 217.7 111.0 219.7 111.0 221.0C111.0 222.3 109.8 224.3 109.5 225.0" class="ink" pathLength="1"/><path d="M114.5 217.0C114.2 217.7 113.0 219.7 113.0 221.0C113.0 222.3 114.2 224.3 114.5 225.0" class="ink" pathLength="1"/><path d="M119.0 217.0C119.2 217.7 120.5 219.7 120.5 221.0C120.5 222.3 119.2 224.3 119.0 225.0" class="ink" pathLength="1"/><path d="M352.0 489.8C345.4 484.1 348.2 478.4 352.0 482.2C355.8 478.4 358.6 484.1 352.0 489.8" class="ink" pathLength="1"/><circle cx="109" cy="212" r="1.3" class="dot"/><circle cx="115" cy="212" r="1.3" class="dot"/><text x="200" y="46" class="t-head" text-anchor="middle">Comments</text><text x="86" y="136" class="t-meta">a viewer</text><text x="86" y="158" class="t-ask">@TikTok Tako is this ai?</text><text x="86" y="179" class="t-meta">20h   Reply</text><text x="136" y="209" class="t-meta"><tspan class="t-name">TikTok Tako</tspan> · AI assistant</text><text x="136" y="237" class="t-reply">… The visual analysis shows</text><text x="136" y="258" class="t-reply">no consistent AI artifacts</text><text x="136" y="279" class="t-reply">… The unusual appearance</text><text x="136" y="300" class="t-reply">comes from an actual</text><text x="136" y="321" class="t-reply">costume or prosthetic wig,</text><text x="136" y="342" class="t-reply">not AI generation. …</text><text x="136" y="363" class="t-reply">Overall, the strongest</text><text x="136" y="384" class="t-reply">evidence points to this</text><text x="136" y="405" class="t-reply">being</text><text x="136" y="426" class="t-reply"><tspan class="t-hi">a</tspan> <tspan class="t-hi">real,</tspan> <tspan class="t-hi">physically</tspan> <tspan class="t-hi">filmed</tspan></text><text x="136" y="447" class="t-reply"><tspan class="t-hi">skit</tspan> …</text><text x="136" y="470" class="t-small">ⓘ AI responses may be inaccurate</text><text x="136" y="490" class="t-meta">20h   Reply</text><path d="M144.3 447.4C141.1 446.0 129.3 442.0 125.1 438.9C120.8 435.9 117.4 432.3 118.9 429.2C120.4 426.1 128.0 423.0 134.0 420.1C140.0 417.3 145.8 414.1 155.1 412.0C164.4 409.8 177.3 408.2 189.6 407.2C201.8 406.1 215.7 405.6 228.4 405.8C241.1 406.0 254.4 407.0 265.9 408.3C277.4 409.7 288.8 411.6 297.3 413.8C305.7 416.1 312.0 419.1 316.6 422.0C321.2 424.8 324.6 428.0 324.8 431.1C325.1 434.1 321.8 437.3 317.9 440.3C314.1 443.3 310.0 446.7 301.8 449.0C293.5 451.3 280.3 452.9 268.6 454.1C256.9 455.3 244.1 456.2 231.7 456.3C219.3 456.5 206.6 455.9 194.3 455.1C182.0 454.3 168.1 453.5 157.8 451.6C147.5 449.8 138.4 446.9 132.3 444.1C126.3 441.2 123.3 436.2 121.5 434.6" class="mark" pathLength="1"/><path d="M204.6 456.0C198.7 455.5 179.9 454.2 169.2 452.5C158.6 450.9 147.8 448.6 140.8 446.1C133.8 443.5 130.0 440.3 127.1 437.2C124.2 434.1 121.8 430.8 123.5 427.7C125.2 424.7 131.5 421.7 137.5 418.9C143.5 416.0 149.8 412.9 159.4 410.8C169.0 408.6 182.5 407.0 195.0 406.2C207.6 405.4 222.0 405.5 234.6 406.0C247.3 406.5 259.3 407.9 271.0 409.2C282.7 410.6 296.6 411.9 304.8 414.2C313.1 416.6 316.9 420.1 320.5 423.2C324.1 426.3 327.3 429.5 326.4 432.6C325.5 435.7 320.3 438.8 315.2 441.6C310.0 444.5 304.1 447.5 295.5 449.7C286.9 451.9 275.2 453.8 263.6 455.1C251.9 456.3 238.2 457.1 225.6 457.0C213.1 457.0 200.1 455.9 188.3 454.8C176.4 453.6 160.2 450.9 154.6 450.2" class="mark" pathLength="1"/></g></svg><span class="mono tako-see">See the screenshot ↗</span></a>
+    <p>Asked if he was real, TikTok's own AI assistant, Tako, said yes.</p>
+    <p class="big">Verdict: <q>a real, physically filmed skit.</q></p>
+  </div>
+</section>
+
+<section class="slide slide--paper slide--tako" aria-label="TikTok's AI, second answer">
+  <div class="slide-in">
+    <a class="tako-illus" href="assets/evidence/K322.webp" data-exhibit="assets/evidence/K322.webp" data-caption="Tako&#x27;s reply to the barber question. Account details cropped."><svg class="tako-svg" viewBox="0 0 400 490" role="img" aria-label="Drawing of the comment thread: a viewer asks “@TikTok Tako who is this guys barber” and TikTok Tako replies “This is the funniest joke in the whole comment section 😂 that barber is the AI model that generated this video — the guy, the weird lopsided hair … it&#x27;s all AI-generated. No actual barber signed off on that cut.”"><defs><linearGradient id="fade11" x1="0" y1="0" x2="0" y2="1"><stop offset=".88" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient><mask id="m11"><rect width="400" height="490" fill="url(#fade11)"/></mask></defs><g mask="url(#m11)"><path d="M68.8 93.9C68.2 94.3 66.5 95.7 65.2 96.3C64.0 96.9 62.6 97.3 61.2 97.6C59.8 97.9 58.1 98.5 56.7 98.2C55.2 98.0 53.7 97.0 52.6 96.0C51.5 95.0 50.9 93.5 50.1 92.3C49.3 91.0 47.9 89.9 47.7 88.5C47.4 87.1 48.2 85.5 48.6 84.0C48.9 82.6 49.2 81.2 49.8 79.9C50.4 78.6 51.2 77.1 52.3 76.1C53.4 75.2 55.0 74.6 56.4 74.3C57.9 74.1 59.3 74.6 60.8 74.6C62.3 74.6 64.2 73.9 65.4 74.5C66.7 75.1 67.5 76.8 68.4 78.0C69.3 79.2 70.1 80.3 70.8 81.5C71.4 82.8 72.3 84.3 72.4 85.7C72.4 87.1 71.7 88.6 71.1 90.0C70.5 91.3 69.8 92.6 68.9 93.7C67.9 94.7 65.9 95.7 65.3 96.1" class="ink faint" pathLength="1"/><path d="M62.2 75.7L70.2 83.5" class="ink faint" pathLength="1"/><path d="M57.7 75.8L70.6 88.2" class="ink faint" pathLength="1"/><path d="M54.5 77.9L68.1 91.3" class="ink faint" pathLength="1"/><path d="M52.2 80.4L65.7 93.9" class="ink faint" pathLength="1"/><path d="M50.3 83.8L62.3 96.4" class="ink faint" pathLength="1"/><path d="M49.9 88.0L58.0 96.1" class="ink faint" pathLength="1"/><path d="M84.0 78.5C85.5 78.6 90.1 79.0 92.9 79.2C95.6 79.3 98.0 79.0 100.7 79.2C103.4 79.4 106.6 80.4 109.0 80.3C111.4 80.3 112.8 79.2 115.1 79.0C117.5 78.7 120.7 78.4 123.0 78.6C125.3 78.8 126.5 79.9 128.9 80.2C131.3 80.5 134.9 80.2 137.3 80.4C139.8 80.6 141.5 81.7 143.5 81.3C145.5 81.0 147.3 78.7 149.3 78.5C151.3 78.2 153.5 79.7 155.4 79.8C157.2 79.9 158.6 78.9 160.6 79.0C162.6 79.0 165.1 80.1 167.1 80.2C169.1 80.3 170.3 79.3 172.6 79.6C174.9 79.8 178.5 81.4 181.2 81.5C183.9 81.7 186.3 81.1 188.8 80.6C191.3 80.2 194.0 79.2 196.1 78.8C198.2 78.5 199.0 78.2 201.3 78.5C203.6 78.8 207.0 80.6 209.9 80.6C212.8 80.6 216.0 78.6 218.8 78.5C221.5 78.4 223.7 79.8 226.3 79.9C228.9 80.1 231.4 79.6 234.2 79.4C237.0 79.2 240.5 78.4 243.2 78.6C245.9 78.9 247.8 80.4 250.4 80.8C253.0 81.1 256.3 80.7 259.0 80.8C261.7 80.8 264.1 81.1 266.8 80.9C269.6 80.7 272.8 79.5 275.5 79.5C278.2 79.6 280.5 81.2 283.2 81.3C285.9 81.3 288.9 79.8 291.7 79.7C294.5 79.7 298.5 81.1 299.9 81.2C301.3 81.2 300.0 80.4 300.0 80.2" class="ink faint" pathLength="1"/><path d="M84.0 93.6C85.2 93.7 89.2 94.2 91.3 94.3C93.4 94.5 94.3 94.3 96.7 94.4C99.0 94.6 102.8 95.3 105.6 95.2C108.4 95.1 110.9 93.8 113.5 93.6C116.2 93.5 119.0 94.0 121.5 94.3C123.9 94.5 126.2 95.0 128.2 95.1C130.3 95.2 131.8 94.9 133.6 94.8C135.3 94.7 136.7 94.6 138.7 94.3C140.7 94.0 143.2 93.2 145.6 93.1C148.1 93.1 150.9 93.6 153.4 94.0C156.0 94.4 158.6 95.6 160.9 95.3C163.1 95.1 164.9 92.6 166.9 92.4C168.9 92.3 171.1 94.5 173.1 94.6C175.1 94.7 176.5 93.0 178.9 92.9C181.3 92.9 185.0 94.1 187.5 94.5C190.1 94.9 192.1 95.3 194.3 95.3C196.5 95.3 198.6 94.8 200.6 94.5C202.6 94.3 204.1 93.6 206.4 93.8C208.7 93.9 211.8 95.4 214.6 95.3C217.4 95.3 220.6 93.9 223.1 93.6C225.7 93.3 228.9 93.6 230.0 93.6" class="ink faint" pathLength="1"/><path d="M50.0 539.0C49.8 538.3 49.3 536.1 49.0 534.7C48.8 533.3 48.5 532.0 48.5 530.5C48.6 529.1 48.7 527.5 49.2 526.2C49.8 524.8 50.7 523.5 51.8 522.4C52.9 521.4 54.4 520.4 55.8 520.0C57.2 519.7 58.9 520.4 60.3 520.6C61.8 520.7 63.3 520.5 64.7 520.9C66.0 521.4 67.5 522.1 68.6 523.1C69.6 524.1 70.3 525.6 70.9 526.9C71.5 528.3 72.2 529.8 72.2 531.2C72.3 532.6 71.6 534.1 71.0 535.4C70.5 536.7 69.8 538.0 68.9 539.1C68.1 540.1 67.0 541.2 65.8 541.8C64.6 542.5 63.2 542.9 61.9 543.2C60.5 543.5 58.9 544.0 57.5 543.8C56.2 543.6 54.7 542.9 53.5 542.1C52.3 541.3 51.0 540.3 50.2 539.1C49.5 537.9 49.1 535.7 48.9 535.0" class="ink faint" pathLength="1"/><path d="M62.3 521.3L70.8 529.9" class="ink faint" pathLength="1"/><path d="M58.2 521.5L69.7 534.7" class="ink faint" pathLength="1"/><path d="M54.3 523.8L68.3 537.6" class="ink faint" pathLength="1"/><path d="M51.8 526.0L66.0 539.7" class="ink faint" pathLength="1"/><path d="M50.2 529.7L62.3 541.9" class="ink faint" pathLength="1"/><path d="M49.7 533.8L57.8 542.2" class="ink faint" pathLength="1"/><path d="M84.0 526.0C84.8 526.2 86.9 527.2 89.1 527.3C91.3 527.4 94.5 526.8 97.3 526.7C100.0 526.5 103.2 526.5 105.7 526.4C108.2 526.4 110.1 526.1 112.3 526.3C114.6 526.5 116.8 527.7 119.3 527.5C121.9 527.4 124.8 525.4 127.6 525.2C130.4 525.1 133.4 526.5 136.2 526.8C139.0 527.1 141.9 526.9 144.3 527.0C146.8 527.1 148.4 527.3 150.9 527.3C153.5 527.2 156.7 526.7 159.5 526.6C162.2 526.6 165.1 526.8 167.5 526.8C170.0 526.9 172.2 526.9 174.2 526.7C176.1 526.5 177.4 525.9 179.4 525.5C181.5 525.1 184.1 524.3 186.3 524.4C188.5 524.6 190.4 526.3 192.7 526.4C195.1 526.6 197.5 525.1 200.2 525.1C202.9 525.2 206.5 526.3 209.0 526.5C211.5 526.8 213.1 526.6 215.4 526.5C217.6 526.4 220.3 525.9 222.6 526.1C224.9 526.3 226.8 527.5 229.2 527.6C231.6 527.7 234.2 526.7 236.8 526.6C239.4 526.6 242.6 527.6 244.8 527.5C247.0 527.5 247.7 526.8 249.9 526.4C252.1 526.0 255.4 525.5 257.9 525.2C260.3 524.9 262.4 524.5 264.5 524.6C266.5 524.6 268.4 525.5 270.3 525.6C272.1 525.7 273.3 525.1 275.6 525.2C278.0 525.3 281.7 525.8 284.3 526.2C286.9 526.5 288.9 527.3 291.3 527.5C293.7 527.7 296.1 527.7 298.6 527.6C301.0 527.5 304.0 527.2 306.1 527.0C308.3 526.8 309.2 526.7 311.4 526.3C313.7 525.9 318.0 524.7 319.5 524.5C320.9 524.4 319.9 525.2 320.0 525.3" class="ink faint" pathLength="1"/><path d="M84.0 539.9C84.9 539.9 87.5 540.2 89.7 540.0C91.9 539.8 94.4 538.6 97.1 538.6C99.8 538.5 103.3 539.5 105.9 539.7C108.6 540.0 110.7 540.4 113.0 540.3C115.3 540.2 117.1 539.3 119.5 539.3C121.8 539.3 124.8 540.0 127.1 540.2C129.4 540.4 131.2 541.0 133.2 540.7C135.3 540.4 137.4 538.8 139.4 538.4C141.4 538.1 143.5 538.1 145.4 538.5C147.3 538.9 149.0 540.4 151.0 540.8C153.0 541.3 155.2 541.6 157.6 541.3C160.0 540.9 162.7 538.5 165.6 538.6C168.4 538.6 172.2 541.0 174.5 541.4C176.9 541.9 177.8 541.5 179.8 541.3C181.8 541.0 183.9 540.3 186.5 539.9C189.1 539.6 192.8 538.9 195.4 539.2C198.1 539.4 200.0 541.3 202.5 541.4C205.0 541.5 207.6 540.0 210.4 539.9C213.2 539.8 216.6 541.2 219.3 541.0C222.1 540.8 224.3 539.0 226.7 538.8C229.2 538.6 232.0 539.9 234.2 539.9C236.5 539.8 237.9 538.7 240.1 538.6C242.2 538.4 245.5 538.5 247.2 538.8C248.8 539.1 249.5 540.1 250.0 540.3" class="ink faint" pathLength="1"/><path d="M51.9 8.1L349.0 7.9Q378.0 8.0 378.0 38.2L377.2 538.0Q378.0 568.0 348.3 568.7L51.0 567.5Q22.0 568.0 21.0 538.7L22.5 36.9Q22.0 8.0 53.2 9.1" class="ink" pathLength="1"/><path d="M52.4 8.3L347.2 6.8Q378.0 8.0 378.1 36.9L377.3 537.4Q378.0 568.0 346.9 567.9L51.9 568.8Q22.0 568.0 22.0 538.3L22.0 38.4Q22.0 8.0 51.9 7.5" class="ink" pathLength="1"/><path d="M178.4 22.3Q200.0 22.5 222.2 21.8" class="ink" pathLength="1"/><path d="M177.8 21.6Q200.0 21.7 222.2 21.9" class="ink" pathLength="1"/><path d="M343.9 36.5Q348.8 41.2 354.4 45.5" class="ink" pathLength="1"/><path d="M344.5 36.0Q349.2 40.8 354.5 45.9" class="ink" pathLength="1"/><path d="M354.1 36.3Q349.3 41.3 343.7 45.5" class="ink" pathLength="1"/><path d="M354.5 36.3Q349.1 41.1 343.6 45.7" class="ink" pathLength="1"/><path d="M39.5 58.3Q200.0 56.2 359.6 58.1" class="ink" pathLength="1"/><path d="M39.7 58.3Q200.0 57.8 359.6 58.2" class="ink" pathLength="1"/><path d="M69.8 153.3C69.1 153.9 67.0 156.0 65.3 156.7C63.6 157.4 61.5 157.7 59.7 157.6C57.8 157.5 55.9 156.9 54.1 156.2C52.4 155.5 50.3 154.8 49.1 153.5C47.9 152.1 47.4 150.0 46.8 148.3C46.2 146.5 45.8 144.8 45.6 143.1C45.5 141.3 45.3 139.4 45.7 137.7C46.2 136.0 47.4 134.4 48.5 133.0C49.6 131.7 51.1 130.5 52.6 129.6C54.0 128.6 55.7 127.8 57.5 127.4C59.2 127.0 61.2 126.7 63.0 127.1C64.7 127.4 66.6 128.3 68.0 129.3C69.5 130.4 70.6 131.9 71.8 133.3C73.0 134.7 74.4 136.1 75.1 137.9C75.7 139.6 76.1 141.8 75.8 143.6C75.5 145.4 74.3 147.2 73.3 148.7C72.3 150.2 70.9 151.5 69.5 152.6C68.2 153.7 65.8 154.8 65.1 155.2" class="ink" pathLength="1"/><path d="M69.9 131.8C70.6 132.5 73.1 134.0 74.0 135.6C74.8 137.1 75.1 139.3 75.1 141.1C75.1 142.9 74.5 144.6 74.0 146.4C73.5 148.2 73.3 150.4 72.1 151.7C71.0 153.0 68.8 153.5 67.1 154.2C65.5 155.0 64.0 155.8 62.3 156.2C60.6 156.6 58.6 157.0 56.9 156.6C55.2 156.2 53.9 154.8 52.3 153.8C50.7 152.9 48.4 152.5 47.3 151.1C46.3 149.7 46.2 147.5 45.9 145.7C45.7 143.9 45.5 142.1 45.7 140.4C46.0 138.7 46.7 137.1 47.4 135.4C48.1 133.8 48.7 131.8 49.9 130.6C51.2 129.3 53.1 128.6 54.9 128.0C56.6 127.4 58.4 126.8 60.2 126.8C62.1 126.7 64.0 127.2 65.7 127.8C67.5 128.5 69.2 129.4 70.6 130.7C72.1 131.9 73.7 134.4 74.3 135.1" class="ink" pathLength="1"/><path d="M64.5 129.2L72.5 137.3" class="ink" pathLength="1"/><path d="M59.1 129.1L73.1 142.1" class="ink" pathLength="1"/><path d="M55.9 129.8L72.2 145.9" class="ink" pathLength="1"/><path d="M53.4 131.8L70.4 149.0" class="ink" pathLength="1"/><path d="M51.3 133.1L68.9 151.3" class="ink" pathLength="1"/><path d="M48.6 136.0L66.1 153.4" class="ink" pathLength="1"/><path d="M47.5 139.1L63.3 154.6" class="ink" pathLength="1"/><path d="M47.5 142.8L59.3 154.7" class="ink" pathLength="1"/><path d="M48.4 148.7L53.7 154.0" class="ink" pathLength="1"/><path d="M46.9 139.0L57.1 129.7" class="ink" pathLength="1"/><path d="M47.5 144.6L62.2 129.9" class="ink" pathLength="1"/><path d="M49.7 148.3L66.0 131.3" class="ink" pathLength="1"/><path d="M52.2 151.9L69.6 133.6" class="ink" pathLength="1"/><path d="M56.1 153.4L72.2 137.4" class="ink" pathLength="1"/><path d="M60.4 155.3L72.6 142.3" class="ink" pathLength="1"/><path d="M352.0 149.8C345.4 144.1 348.2 138.4 352.0 142.2C355.8 138.4 358.6 144.1 352.0 149.8" class="ink" pathLength="1"/><path d="M60.3 164.4Q60.0 197.0 60.2 230.6" class="ink" pathLength="1"/><path d="M60.6 163.5Q60.0 197.0 59.6 230.0" class="ink" pathLength="1"/><path d="M60.3 230.2Q76.1 233.7 92.0 238.5" class="ink" pathLength="1"/><path d="M59.8 229.8Q76.0 234.1 92.5 238.5" class="ink" pathLength="1"/><path d="M116.1 253.1C115.1 253.2 112.1 254.0 110.3 253.8C108.5 253.5 106.7 252.3 105.1 251.4C103.5 250.4 101.8 249.4 100.7 248.1C99.6 246.7 99.1 244.8 98.5 243.1C97.8 241.4 97.0 239.6 96.9 237.9C96.9 236.1 97.4 234.2 98.1 232.5C98.7 230.8 99.6 228.9 100.8 227.7C102.1 226.5 104.1 226.2 105.8 225.3C107.4 224.4 108.9 222.5 110.6 222.2C112.4 221.9 114.4 222.9 116.2 223.6C117.9 224.2 119.5 225.2 121.0 226.2C122.5 227.2 124.2 228.3 125.2 229.8C126.2 231.3 126.6 233.4 126.9 235.2C127.1 237.1 127.0 238.9 126.7 240.7C126.4 242.6 126.1 244.6 125.1 246.1C124.0 247.5 122.1 248.3 120.6 249.3C119.1 250.4 117.8 251.9 116.2 252.5C114.5 253.1 111.6 252.7 110.7 252.8" class="ink" pathLength="1"/><path d="M127.2 233.8C127.1 234.7 126.8 237.6 126.5 239.4C126.2 241.2 126.2 243.2 125.4 244.7C124.5 246.3 123.0 247.4 121.6 248.6C120.3 249.8 119.0 251.1 117.4 251.9C115.7 252.7 113.8 253.4 112.0 253.6C110.2 253.7 108.0 253.4 106.3 252.7C104.7 251.9 103.2 250.4 101.9 249.1C100.7 247.7 99.6 246.2 98.9 244.6C98.2 243.0 97.9 241.2 97.6 239.4C97.4 237.6 97.1 235.7 97.3 233.9C97.6 232.1 98.2 229.9 99.4 228.6C100.5 227.2 102.8 226.8 104.4 225.9C106.0 224.9 107.3 223.1 109.0 222.8C110.7 222.5 112.7 223.6 114.5 224.1C116.2 224.6 118.0 224.8 119.5 225.6C121.0 226.5 122.3 227.8 123.5 229.1C124.7 230.5 126.2 231.9 126.7 233.6C127.2 235.3 126.6 238.2 126.6 239.2" class="ink" pathLength="1"/><path d="M104.0 240.0C104.2 238.7 103.7 234.0 105.0 232.0C106.3 230.0 109.7 228.0 112.0 228.0C114.3 228.0 117.7 230.0 119.0 232.0C120.3 234.0 119.8 238.7 120.0 240.0" class="ink" pathLength="1"/><path d="M105.0 240.0C104.8 240.7 103.5 242.7 103.5 244.0C103.5 245.3 104.8 247.3 105.0 248.0" class="ink" pathLength="1"/><path d="M109.5 240.0C109.8 240.7 111.0 242.7 111.0 244.0C111.0 245.3 109.8 247.3 109.5 248.0" class="ink" pathLength="1"/><path d="M114.5 240.0C114.2 240.7 113.0 242.7 113.0 244.0C113.0 245.3 114.2 247.3 114.5 248.0" class="ink" pathLength="1"/><path d="M119.0 240.0C119.2 240.7 120.5 242.7 120.5 244.0C120.5 245.3 119.2 247.3 119.0 248.0" class="ink" pathLength="1"/><path d="M352.0 491.8C345.4 486.1 348.2 480.4 352.0 484.2C355.8 480.4 358.6 486.1 352.0 491.8" class="ink" pathLength="1"/><circle cx="109" cy="235" r="1.3" class="dot"/><circle cx="115" cy="235" r="1.3" class="dot"/><text x="200" y="46" class="t-head" text-anchor="middle">Comments</text><text x="86" y="136" class="t-meta">a viewer</text><text x="86" y="158" class="t-ask">@TikTok Tako who is this</text><text x="86" y="181" class="t-ask">guys barber</text><text x="86" y="202" class="t-meta">19h   Reply</text><text x="136" y="232" class="t-meta"><tspan class="t-name">TikTok Tako</tspan> · AI assistant</text><text x="136" y="260" class="t-reply">This is the funniest joke</text><text x="136" y="281" class="t-reply">in the whole comment</text><text x="136" y="302" class="t-reply">section 😂</text><text x="136" y="323" class="t-reply"><tspan class="t-hi">that</tspan> <tspan class="t-hi">barber</tspan> <tspan class="t-hi">is</tspan> <tspan class="t-hi">the</tspan> <tspan class="t-hi">AI</tspan> <tspan class="t-hi">model</tspan></text><text x="136" y="344" class="t-reply"><tspan class="t-hi">that</tspan> <tspan class="t-hi">generated</tspan> <tspan class="t-hi">this</tspan> <tspan class="t-hi">video</tspan> —</text><text x="136" y="365" class="t-reply">the guy, the weird lopsided</text><text x="136" y="386" class="t-reply">hair … it&#x27;s all</text><text x="136" y="407" class="t-reply">AI-generated. No actual</text><text x="136" y="428" class="t-reply">barber signed off on that</text><text x="136" y="449" class="t-reply">cut.</text><text x="136" y="472" class="t-small">ⓘ AI responses may be inaccurate</text><text x="136" y="492" class="t-meta">19h   Reply</text><path d="M163.8 348.8C159.7 347.5 146.7 343.8 139.7 341.0C132.6 338.3 123.5 335.4 121.5 332.4C119.5 329.3 124.3 325.9 127.7 322.8C131.1 319.8 134.2 316.4 141.7 313.9C149.2 311.3 161.1 309.2 172.6 307.6C184.0 305.9 197.2 304.7 210.3 304.0C223.4 303.3 238.1 302.9 251.3 303.3C264.5 303.8 278.3 305.3 289.7 307.0C301.1 308.7 311.6 311.0 319.6 313.5C327.6 316.1 333.9 319.1 337.5 322.1C341.1 325.2 343.0 328.6 341.1 331.7C339.1 334.8 332.5 337.9 325.7 340.5C318.9 343.2 310.1 345.7 300.0 347.8C289.9 349.9 278.0 352.0 265.3 353.0C252.6 354.1 237.4 354.4 223.8 354.2C210.2 353.9 196.2 352.8 183.7 351.5C171.2 350.1 157.9 348.4 148.6 346.1C139.4 343.8 131.6 339.0 128.2 337.5" class="mark" pathLength="1"/><path d="M298.9 308.9C303.8 310.0 321.4 313.0 328.8 315.6C336.1 318.3 340.8 321.7 343.0 324.8C345.1 328.0 345.4 331.7 341.6 334.7C337.8 337.7 328.7 340.6 320.2 343.1C311.7 345.6 301.7 347.8 290.6 349.7C279.5 351.5 266.7 353.7 253.5 354.3C240.4 354.8 225.7 353.6 211.9 353.1C198.1 352.5 182.8 352.3 170.9 350.8C158.9 349.2 147.5 346.5 140.3 343.8C133.2 341.1 130.6 337.6 128.0 334.5C125.5 331.4 123.9 328.3 125.0 325.1C126.1 322.0 128.1 318.5 134.7 315.8C141.2 313.1 153.2 310.8 164.2 309.0C175.1 307.1 187.7 305.9 200.5 304.8C213.4 303.7 227.7 302.3 241.1 302.5C254.4 302.7 268.1 304.3 280.5 305.8C292.9 307.2 306.8 308.8 315.4 311.2C324.0 313.5 329.5 318.5 332.3 320.0" class="mark" pathLength="1"/></g></svg><span class="mono tako-see">See the screenshot ↗</span></a>
+    <p>An hour later, someone asked who cut his hair. The same AI, with certainty: <q>that barber is the AI model that generated this video.</q> Same witness. Opposite answers. We can't tell either.</p>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="slide-in">
+    <p class="big">So stop asking whether he's real. Ask who answers for him.</p>
+    
+    <aside class="hook" data-hook="2">
+      <p class="hook-kick mono">Hook to borrow</p>
+      <p class="hook-line">“Is it real?” is the wrong question. Ask who answers for it.</p>
+      <p class="hook-fact">TikTok's own AI called Jean Phil a real, physically filmed skit, then, an hour later, AI-generated. <a class="hook-src mono" href="assets/evidence/K322.webp" target="_blank" rel="noopener">Our screenshots ↗</a></p>
+      <button type="button" class="hook-copy mono">Copy</button>
+    </aside>
+  </div>
+</section>
+
+<section class="reel-card" id="money" data-reel-section="money" aria-labelledby="money-h">
+  <p class="numeral" aria-hidden="true">III</p>
+  <h2 id="money-h">The Money</h2>
+  <p class="reel-line">Forty-three hours in, someone named a coin after him.</p>
+</section>
+
+<section class="slide">
+  <div class="slide-in">
+    <p>Forty-three hours after his first TikTok, someone launched a cryptocurrency named after him: JEANPHIL, a meme coin. That's homemade internet money, bought on a bet that the joke gets bigger.</p>
+    <p class="big">Who launched it? We don't know.</p>
+  </div>
+</section>
+
+<section class="offspring frame" id="offspring" aria-labelledby="offspring-h">
+  <p class="frame-head" id="offspring-h">Then the money copied itself.</p>
+  <p class="frame-sub">Within a day came the first spin-off coin, bought and sold with JEANPHIL. Eight days in, there were at least sixteen. Tap any coin to see who made it.</p>
+  <figure class="coin-pile" id="coin-pile" aria-label="Coins trading in JEANPHIL, by the day they first traded">
+    <p class="pile-count"><b id="pile-n">16</b><span class="mono">coins trading in JEANPHIL</span></p>
+    <div class="pile-grid" id="pile-grid"></div>
+    <p class="pile-readout mono" id="pile-readout" aria-live="polite">Tap any coin to see who made it.</p>
+  </figure>
+</section>
+
+<section class="slide">
+  <div class="slide-in">
+    <p class="big">Sixteen coins. One answer.</p>
+    <p>That's what a token can do with any moment that draws a crowd: turn attention into money within hours, and move it somewhere nobody can see into.</p>
+    
+    <aside class="hook" data-hook="3">
+      <p class="hook-kick mono">Hook to borrow</p>
+      <p class="hook-line">Attention can be minted in an afternoon, and the money doesn’t need a name on it.</p>
+      <p class="hook-fact">A coin named after Jean Phil launched 43 hours after his first TikTok. At least 16 spin-offs were trading in it within eight days, their makers unknown. <a class="hook-src mono" href="https://dexscreener.com/solana/4R8CiMnJWDNoes3fQi1ccPFJygPXazaHaWpHrN3rZeNj" target="_blank" rel="noopener">DEX Screener ↗</a></p>
+      <button type="button" class="hook-copy mono">Copy</button>
+    </aside>
+  </div>
+</section>
+
+<section class="reel-card" id="teammate" data-reel-section="teammate" aria-labelledby="teammate-h">
+  <p class="numeral" aria-hidden="true">IV</p>
+  <h2 id="teammate-h">Nobody&rsquo;s Teammate</h2>
+  <p class="reel-line">What if nobody is behind him?</p>
+</section>
+
+<section class="slide">
+  <div class="slide-in">
+    <p>Start with a strange fact: most of the web is already not people.</p>
+    <figure class="share-bar" aria-label="Web traffic in 2025: 53 percent bots, 47 percent humans">
+      <div class="share-track"><span class="share-bots" style="--w:53%"><b>53%</b> bots</span><span class="share-people" style="--w:47%"><b>47%</b> people</span></div>
+      <figcaption class="mono">Share of web traffic in 2025 · <a class="xref" href="https://cpl.thalesgroup.com/about-us/newsroom/ai-driven-bot-attacks-surged-according-to-bad-bot-report" target="_blank" rel="noopener">Thales, 2026 Bad Bot Report</a></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="slide paper-intro" aria-label="The paper">
+  <div class="slide-in">
+    <p>This year, four computer scientists, including Berkeley's <a class="xref" href="https://dawnsong.io/" target="_blank" rel="noopener">Dawn Song</a>, asked the next question: what happens when AI agents can pay their own bills?</p>
+    <p>Their answer is a self-sovereign agent. It keeps itself running: it earns its own money, buys its own computing and can copy itself, with no human in the loop. Not <q>a distant hypothetical,</q> they write, but <q>a near-term possibility.</q></p>
+  <div class="paper-card paper-card--authors">
+    <span class="mono">Preprint · 2026</span>
+    <b><a href="https://arxiv.org/abs/2604.08551" target="_blank" rel="noopener">Self-Sovereign Agent</a></b>
+    <span><a href="https://quwenjie.github.io/" target="_blank" rel="noopener">Wenjie Qu</a>, <a href="https://xuandongzhao.github.io/" target="_blank" rel="noopener">Xuandong Zhao</a>, <a href="https://zjhzjh123.github.io/" target="_blank" rel="noopener">Jiaheng Zhang</a>, <a href="https://dawnsong.io/" target="_blank" rel="noopener">Dawn Song</a></span>
+    <span class="mono"><a href="https://self-sovereign-agent.github.io/paper.pdf" target="_blank" rel="noopener">Read the paper ↗</a></span>
+  </div>
+  </div>
+</section>
+
+<section class="slide slide--paper">
+  <div class="slide-in">
+    <p>The name echoes self-sovereign identity, <a class="xref" href="https://www.lifewithalacrity.com/article/the-path-to-self-soverereign-identity/" target="_blank" rel="noopener">Christopher Allen's</a> 2016 idea that people should own their identity outright.</p>
+    <p class="big">A self-sovereign agent owns itself.</p>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="slide-in">
+    <p>The parts already exist. Since 2025, a protocol from Coinbase called <a class="xref" href="https://www.linuxfoundation.org/press/linux-foundation-announces-operational-launch-of-x402-foundation-to-standardize-internet-native-payments-for-ai-agents-and-applications" target="_blank" rel="noopener">x402</a> has let software pay for things as it browses: about 165 million payments by this April, <a class="xref" href="https://finance.yahoo.com/markets/crypto/articles/coinbase-global-launches-app-store-134600286.html" target="_blank" rel="noopener">by Coinbase's count</a>, at about 31 cents each.</p>
+    <p class="big">No account. No card. Only a wallet.</p>
+  </div>
+</section>
+
+<section class="slide slide--paper">
+  <div class="slide-in">
+    <p>The big networks are heading the other way. To pay through Mastercard's <a class="xref" href="https://investor.mastercard.com/investor-news/investor-news-details/2025/Mastercard-Unveils-Agent-Pay-Pioneering-Agentic-Payments-Technology-to-Power-Commerce-in-the-Age-of-AI/default.aspx" target="_blank" rel="noopener">Agent Pay</a>, an agent must first be registered and verified. Last month, Visa, Mastercard and Ant International <a class="xref" href="https://finance.yahoo.com/technology/ai/articles/ant-international-mastercard-visa-initiate-010000855.html" target="_blank" rel="noopener">began work</a> on a shared “know your agent” framework, under which every agent links to a validated operator.</p>
+    <p class="big">A self-sovereign agent is built to have no operator.</p>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="slide-in">
+    <p>It's been rehearsed. In 2024, <a class="xref" href="https://decrypt.co/239340/marc-andreessen-sends-50k-in-bitcoin-to-an-ai-bot-on-twitter" target="_blank" rel="noopener">Marc Andreessen sent $50,000 in bitcoin</a> to <a class="xref" href="https://techpolicy.press/the-rise-and-fall-and-rise-again-of-the-first-ai-agent-millionaire" target="_blank" rel="noopener">Truth Terminal</a>, an AI persona on X. A meme coin someone else made around its posts <a class="xref" href="https://www.coingecko.com/en/coins/goatseus-maximus" target="_blank" rel="noopener">briefly topped $1 billion</a> in market value, and the bot's wallet <a class="xref" href="https://www.theblock.co/post/322002/marc-andreessen-funded-ai-bot-becomes-a-millionaire-after-fartcoin-holdings-rally" target="_blank" rel="noopener">passed $1 million</a> on paper. A human still vetted its posts.</p>
+    <p class="big">The next one may not need a human.</p>
+  </div>
+</section>
+
+<section class="slide slide--paper slide--monster" aria-label="Our hunch">
+  <figure class="monster-fig">
+    <canvas class="monster" role="img" aria-label="Illustration: a floating many-eyed monster in Jean Phil's blond bob and curled mustache, turning slowly. Some of its eyes are Jean Phil coins."></canvas>
+  </figure>
+  <div class="slide-in">
+    <p>Our hunch, and it's only a hunch: <a class="xref" href="https://www.tiktok.com/@jean_philanthrope" target="_blank" rel="noopener">Jean Phil</a> may be an early draft of that agent.</p>
+    <p class="big">We can't prove it. We can't rule it out.</p>
+  </div>
+  <script type="module" src="assets/js/monster.js"></script>
+</section>
+
+<section class="slide">
+  <div class="slide-in">
+    <p>Across the industry, the pitch for AI at work is the teammate: an agent as a first-class participant in calls, chats and meetings. <q>Digital colleagues aren't just tools—they're teammates,</q> <a class="xref" href="https://www.microsoft.com/en-us/worklab/work-trend-index/2025-the-year-the-frontier-firm-is-born" target="_blank" rel="noopener">Microsoft's Work Trend Index</a> put it. A teammate has a manager, a badge and a name to call.</p>
+    <p class="big">A self-sovereign agent has none of those. It's nobody's teammate. And it can still show up.</p>
+  </div>
+</section>
+
+<section class="headless frame" id="headless" aria-labelledby="hm-h">
+  <p class="frame-head" id="hm-h">Copies faster than takedowns</p>
+  <p class="frame-sub">Try to switch it off. Tap a copy to take it down. Another takes its place. An illustration of <a class="xref" href="https://self-sovereign-agent.github.io/paper.pdf" target="_blank" rel="noopener">the paper</a>'s survival rule.</p>
+  <div class="tk hm">
+    <p class="tk-cap" aria-live="off">&nbsp;</p>
+    <canvas class="tk-canvas" tabindex="0" aria-label="An illustration of an imagined self-sovereign agent: the many-eyed monster sprays copies of Jean Phil across the page, each copy sends imagined coins back, and made-up viral moments hit the monster and spike an imagined coin's line. Tap a copy to pop it; another takes its place. Space brings the next viral moment; Enter pops a copy."></canvas>
+  </div>
+  <script type="module" src="assets/js/headless.js"></script>
+</section>
+
+<section class="slide">
+  <div class="slide-in">
+    <p>Platforms and governments can make agents like this rarer, the paper argues, but not extinct.</p>
+    <p class="big">With no owner, there's no one to call.</p>
+    
+    <aside class="hook" data-hook="4">
+      <p class="hook-kick mono">Hook to borrow</p>
+      <p class="hook-line">The next agent you meet may have no boss.</p>
+      <p class="hook-fact">Researchers at NUS and UC Berkeley, including Dawn Song, call AI agents that pay their own bills a near-term possibility, and the payment rails already exist. <a class="hook-src mono" href="https://arxiv.org/abs/2604.08551" target="_blank" rel="noopener">The paper ↗</a></p>
+      <button type="button" class="hook-copy mono">Copy</button>
+    </aside>
+  </div>
+</section>
+
+<section class="reel-card" id="questions" data-reel-section="questions" aria-labelledby="questions-h">
+  <p class="numeral" aria-hidden="true">V</p>
+  <h2 id="questions-h">The Questions</h2>
+  <p class="reel-line">An agent calls your contact center. Whose is it?</p>
+</section>
+
+<section class="gate frame" id="gate" aria-labelledby="gate-h">
+  <p class="frame-head" id="gate-h">An agent calls to change a customer's account. Would you let it in?</p>
+  <p class="frame-sub">Pick what it would take. Each check turns over.</p>
+  <ul class="gate-checks">
+      <li><details class="gate-card gate-card--fake">
+        <summary><span class="gate-q">It sounds like the customer.</span><span class="gate-stamp mono" aria-hidden="true">Fakeable</span></summary>
+        <p class="gate-a">At contact centers, deepfake attempts went from about one a month to seven a day in 2024. <a class="xref" href="https://www.prnewswire.com/news-releases/pindrops-2025-voice-intelligence--security-report-reveals-1-300-surge-in-deepfake-fraud-302479482.html" target="_blank" rel="noopener">Pindrop</a></p>
+      </details></li>
+      <li><details class="gate-card gate-card--fake">
+        <summary><span class="gate-q">It calls from the customer's number.</span><span class="gate-stamp mono" aria-hidden="true">Fakeable</span></summary>
+        <p class="gate-a">Caller ID can be faked. <a class="xref" href="https://www.fcc.gov/consumers/guides/spoofing" target="_blank" rel="noopener">The FCC</a> keeps a guide to spotting it.</p>
+      </details></li>
+      <li><details class="gate-card gate-card--fake">
+        <summary><span class="gate-q">It's on video, face and all.</span><span class="gate-stamp mono" aria-hidden="true">Fakeable</span></summary>
+        <p class="gate-a">In 2024, an employee at the engineering firm Arup made 15 transfers totaling HK$200 million (about US$25 million) after a video call on which every other face was a deepfake. <a class="xref" href="https://hongkongfp.com/2024/02/05/multinational-loses-hk200-million-to-deepfake-video-conference-scam-hong-kong-police-say/" target="_blank" rel="noopener">Hong Kong Free Press</a></p>
+      </details></li>
+      <li><details class="gate-card gate-card--holds">
+        <summary><span class="gate-q">It carries the customer's signed permission.</span><span class="gate-stamp mono" aria-hidden="true">Holds</span></summary>
+        <p class="gate-a">This one is hard to fake: a signed record of exactly what a person approved. Google's payment protocol for agents calls it a <a class="xref" href="https://cloud.google.com/blog/products/ai-machine-learning/announcing-agents-to-payments-ap2-protocol" target="_blank" rel="noopener">mandate</a>, and it's where the payment networks are heading. A self-sovereign agent has no one to sign it.</p>
+      </details></li>
+  </ul>
+  <p class="gate-verdict" id="gate-verdict" aria-live="polite">Every check that asks <q>Is this the customer?</q> can be faked. The one that holds asks <q>Who answers for this agent?</q></p>
+</section>
+
+<section class="slide slide--paper">
+  <div class="slide-in">
+    <p class="kick">High-trust actions</p>
+    <p>When an agent asks to move money or change an account, the question shifts from <q>Is this you?</q> to <q>Whose agent is this, and who answers for it?</q></p>
+    <p class="big">If it pays its own way, the answer may be no one.</p>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="slide-in">
+    <p class="kick">Sensitive environments</p>
+    <p>Agents are becoming first-class participants in calls, chats and meetings. A room that understands the room also has to know who's in it.</p>
+    <p class="big">What does a meeting do with a participant that answers to no one?</p>
+  </div>
+</section>
+
+<section class="slide slide--paper">
+  <div class="slide-in">
+    <p class="kick">Reputation</p>
+    <p>A keynote walk-on was recast the same day. Signed labels help: <a class="xref" href="https://blog.google/security/pixel-android-trusted-images-c2pa-content-credentials/" target="_blank" rel="noopener">Google's Pixel 10</a> signs every photo with <a class="xref" href="https://c2pa.org/about/" target="_blank" rel="noopener">Content Credentials</a>. But a label shows where a file came from, not who answers for the face in it. When copies outnumber the original, which one is real?</p>
+    <p class="big">And will the audience care?</p>
+  </div>
+</section>
+
+<section class="slide slide--red">
+  <div class="slide-in">
+    <p class="big">How we show up in public has forever changed.</p>
+    
+    <aside class="hook" data-hook="5">
+      <p class="hook-kick mono">Hook to borrow</p>
+      <p class="hook-line">Trust is moving from “Is this you?” to “Who answers for this agent?”</p>
+      <p class="hook-fact">In September 2026, Visa, Mastercard and Ant International began work on a framework that links every AI agent to a validated operator. <a class="hook-src mono" href="https://finance.yahoo.com/technology/ai/articles/ant-international-mastercard-visa-initiate-010000855.html" target="_blank" rel="noopener">The announcement ↗</a></p>
+      <button type="button" class="hook-copy mono">Copy</button>
+    </aside>
+  </div>
+</section>
+
+<section class="reel-card reel-card--red reel-card--coda" id="coda" data-reel-section="coda" aria-labelledby="coda-h">
+  <p class="numeral" aria-hidden="true">VI</p>
+  <h2 id="coda-h">Two Potentials</h2>
+  <p class="reel-line">To trust agents more, we’ll have to trust what we see less.</p>
+</section>
+
+<section class="square frame square--poles square--futures" aria-labelledby="poles-h">
+  <p class="frame-head" id="poles-h">Both futures are being built right now, from the same parts.</p>
+  <div class="poles tarot">
+    <div class="slot slot--snake" data-card="red">
+      <div class="tarot-stage">
+        <span class="shadow shadow--soft" aria-hidden="true"></span>
+        <span class="shadow shadow--tight" aria-hidden="true"></span>
+        <span class="glow" aria-hidden="true"></span>
+        <div class="tilt">
+          <div class="card">
+            <button class="face face--back" type="button" aria-label="Turn over the red card: In one future">
+              <img src="assets/img/cards/back-red.webp" alt="" width="840" height="1440" draggable="false" loading="lazy" decoding="async">
+              <span class="shade" aria-hidden="true"></span>
+              <span class="sheen" aria-hidden="true"></span>
+            </button>
+            <span class="edge edge--l" aria-hidden="true"></span>
+            <span class="edge edge--r" aria-hidden="true"></span>
+            <span class="edge edge--t" aria-hidden="true"></span>
+            <span class="edge edge--b" aria-hidden="true"></span>
+            <article class="face face--front" aria-labelledby="futures-snake-h">
+              <img class="stock" src="assets/img/cards/front-red.webp" alt="" width="840" height="1440" draggable="false" loading="lazy" decoding="async">
+              <div class="copy">
+                <p class="pole-count mono">In one future</p>
+                <h3 id="futures-snake-h" tabindex="-1">Faces that answer to no one walk onto every stage.</h3>
+                <p class="pole-quote">And the audience can't tell, or stops caring.</p>
+                <p class="pole-note mono">Nobody to call.</p>
+              </div>
+              <p class="arcana"><span class="sr-only">I, </span>The Snake</p>
+              <span class="shade" aria-hidden="true"></span>
+              <span class="sheen" aria-hidden="true"></span>
+            </article>
+          </div>
+        </div>
+      </div>
+      <p class="cue mono" aria-hidden="true"><span class="cue-mark"></span>Turn a card</p>
+      <button class="turn-back mono" type="button" aria-label="Turn back the red card">Turn back</button>
+    </div>
+    <div class="slot slot--garden" data-card="green">
+      <div class="tarot-stage">
+        <span class="shadow shadow--soft" aria-hidden="true"></span>
+        <span class="shadow shadow--tight" aria-hidden="true"></span>
+        <span class="glow" aria-hidden="true"></span>
+        <div class="tilt">
+          <div class="card">
+            <button class="face face--back" type="button" aria-label="Turn over the green card: In the other">
+              <img src="assets/img/cards/back-green.webp" alt="" width="840" height="1440" draggable="false" loading="lazy" decoding="async">
+              <span class="shade" aria-hidden="true"></span>
+              <span class="sheen" aria-hidden="true"></span>
+            </button>
+            <span class="edge edge--l" aria-hidden="true"></span>
+            <span class="edge edge--r" aria-hidden="true"></span>
+            <span class="edge edge--t" aria-hidden="true"></span>
+            <span class="edge edge--b" aria-hidden="true"></span>
+            <article class="face face--front" aria-labelledby="futures-garden-h">
+              <img class="stock" src="assets/img/cards/front-green.webp" alt="" width="840" height="1440" draggable="false" loading="lazy" decoding="async">
+              <div class="copy">
+                <p class="pole-count mono">In the other</p>
+                <h3 id="futures-garden-h" tabindex="-1">Every agent carries a name to call.</h3>
+                <p class="pole-quote">And a walk-on stays the speaker's.</p>
+                <p class="pole-note mono">Somebody's teammate.</p>
+              </div>
+              <p class="arcana"><span class="sr-only">II, </span>The Garden</p>
+              <span class="shade" aria-hidden="true"></span>
+              <span class="sheen" aria-hidden="true"></span>
+            </article>
+          </div>
+        </div>
+      </div>
+      <p class="cue mono" aria-hidden="true"><span class="cue-mark"></span>Turn a card</p>
+      <button class="turn-back mono" type="button" aria-label="Turn back the green card">Turn back</button>
+    </div>
+  </div>
+  <script type="module" src="assets/js/cards.js"></script>
+</section>
+
+<section class="slide slide--paper">
+  <div class="slide-in">
+    <p class="big">Which one grows depends on what we build trust into, and what we pay for with our attention.</p>
+  </div>
+</section>
+
+<section class="garden" aria-label="Snakes and Gardens">
+  <img src="assets/brand/garden-close.webp" alt="A classical bust in a dark overgrown garden beneath the Snakes and Gardens wordmark" width="2200" height="984" loading="lazy">
+  <div class="garden-foot">
+    <p class="garden-line">A tale of two potentials.</p>
+    <p class="mono"><a href="#hooks">Hooks to take with you ↓</a> · <a href="#top">Back to the beginning ↑</a></p>
+  </div>
+</section>
+
+<!-- ============ HOOKS TO TAKE WITH YOU ============ -->
+<section class="hooks" id="hooks" aria-labelledby="hooks-h">
+  <p class="hooks-kick mono">For your next talk, post or staff meeting</p>
+  <h2 id="hooks-h">Hooks to take with you</h2>
+  <p class="hooks-sub">Each line comes with the fact under it and its source. Copy one, or all seven.</p>
+  <button type="button" class="hooks-copy-all mono">Copy all seven</button>
+  <ol class="hooks-list">
+    <li class="hooks-item">
+      <p class="hook-line">Every keynote is now raw material.</p>
+      <p class="hook-fact">We recast a keynote walk-on the same day it happened, from one phone video. <a class="hook-src mono" href="#swap">This piece</a></p>
+      <button type="button" class="hook-copy mono">Copy</button>
+    </li>
+    <li class="hooks-item">
+      <p class="hook-line">“Is it real?” is the wrong question. Ask who answers for it.</p>
+      <p class="hook-fact">TikTok's own AI called Jean Phil a real, physically filmed skit, then, an hour later, AI-generated. <a class="hook-src mono" href="assets/evidence/K322.webp" target="_blank" rel="noopener">Our screenshots, Sept 26, 2026 ↗</a></p>
+      <button type="button" class="hook-copy mono">Copy</button>
+    </li>
+    <li class="hooks-item">
+      <p class="hook-line">Attention can be minted in an afternoon.</p>
+      <p class="hook-fact">A coin named for a viral face launched 43 hours after his first post. At least sixteen spin-offs followed within eight days, their makers unknown. <a class="hook-src mono" href="https://dexscreener.com/solana/4R8CiMnJWDNoes3fQi1ccPFJygPXazaHaWpHrN3rZeNj" target="_blank" rel="noopener">DEX Screener, Sept 27, 2026 ↗</a></p>
+      <button type="button" class="hook-copy mono">Copy</button>
+    </li>
+    <li class="hooks-item">
+      <p class="hook-line">Most of the internet is no longer people.</p>
+      <p class="hook-fact">Bots made up 53% of web traffic in 2025; humans, 47%. <a class="hook-src mono" href="https://cpl.thalesgroup.com/about-us/newsroom/ai-driven-bot-attacks-surged-according-to-bad-bot-report" target="_blank" rel="noopener">Thales, 2026 Bad Bot Report ↗</a></p>
+      <button type="button" class="hook-copy mono">Copy</button>
+    </li>
+    <li class="hooks-item">
+      <p class="hook-line">The next agent you meet may have no boss.</p>
+      <p class="hook-fact">NUS and UC Berkeley researchers, including Dawn Song, call AI agents that pay their own bills a near-term possibility. The rails exist: x402 carried about 165 million payments by April 2026, no account required. <a class="hook-src mono" href="https://arxiv.org/abs/2604.08551" target="_blank" rel="noopener">Qu, Zhao, Zhang and Song, 2026 ↗</a></p>
+      <button type="button" class="hook-copy mono">Copy</button>
+    </li>
+    <li class="hooks-item">
+      <p class="hook-line">Seeing is no longer believing, even on a video call.</p>
+      <p class="hook-fact">HK$200 million (about US$25 million) moved after a call on which every other face was a deepfake. <a class="hook-src mono" href="https://hongkongfp.com/2024/02/05/multinational-loses-hk200-million-to-deepfake-video-conference-scam-hong-kong-police-say/" target="_blank" rel="noopener">Hong Kong police via AFP; Arup, 2024 ↗</a></p>
+      <button type="button" class="hook-copy mono">Copy</button>
+    </li>
+    <li class="hooks-item">
+      <p class="hook-line">Trust is moving from “Is this you?” to “Who answers for this agent?”</p>
+      <p class="hook-fact">Visa, Mastercard and Ant International want every AI agent linked to a validated operator. <a class="hook-src mono" href="https://finance.yahoo.com/technology/ai/articles/ant-international-mastercard-visa-initiate-010000855.html" target="_blank" rel="noopener">Ant International, Mastercard and Visa, Sept 2026 ↗</a></p>
+      <button type="button" class="hook-copy mono">Copy</button>
+    </li>
+  </ol>
+  <p class="hooks-more">The full investigation behind this piece: <a class="xref" href="https://sotoai.github.io/snakes-and-gardens/who-is-jean-phil/" target="_blank" rel="noopener">Who is Jean Phil?</a></p>
+  <p class="hooks-closer">And one to end on: <q>To trust agents more, we'll have to trust what we see less.</q></p>
+</section>
+
+<!-- ============ NOTES ============ -->
+<section class="notes" id="notes" aria-labelledby="notes-h">
+  <h2 id="notes-h">Notes</h2>
+
+  <details id="notes-walkon">
+    <summary>How we made the walk-on</summary>
+    <p>We filmed Anurag Dhingra's walk-on at a conference keynote on October 7, 2026, on a phone in the audience. The same day we made an AI version of that recording with Jean Phil in his place, keeping the room's own sound, and burned a label into every frame: <q>AI-altered · Not a real video · Made by Snakes &amp; Gardens.</q> On this page the two play in step at the same size and frame rate, so the only difference is the man on stage. Apart from this page, we haven't posted it.</p>
+    <p>Nothing connects Anurag, his company or anyone at the event to Jean Phil, to any coin or to whoever is behind them. Putting Jean Phil there was our idea, to show how easily it can be done.</p>
+  </details>
+
+  <details id="notes-limits">
+    <summary>What we can't show</summary>
+    <p>Nothing we found establishes who runs the Jean Phil accounts, who launched any of the coins, who holds them or whether anyone has profited. The man in the videos may be a real performer. That Jean Phil might be an early self-sovereign agent is our hypothesis, not a finding, and the paper never mentions him. Tako's contradictions show a machine guessing, not a machine lying. The full reporting, with its methods, is on <a class="xref" href="https://sotoai.github.io/snakes-and-gardens/who-is-jean-phil/" target="_blank" rel="noopener">the Jean Phil page</a>.</p>
+  </details>
+
+  <details id="notes-caveats">
+    <summary>Caveats on the numbers</summary>
+    <p><b>Bots.</b> Thales measures the traffic it sees, and counts all automated requests, good and bad; humans were 47% in 2025, down from 49%.</p>
+    <p><b>x402.</b> The 165 million payments and 31-cent average are Coinbase's own figures (April 2026). <a class="xref" href="https://www.chainalysis.com/blog/x402-agentic-payments-adoption/" target="_blank" rel="noopener">Chainalysis</a> counts more than 100 million on one network and notes that much early volume was speculative trading in a single meme coin, so the count overstates real agent commerce.</p>
+    <p><b>Mastercard and the framework.</b> Agent Pay's registration rule is from its April 2025 launch. The Visa, Mastercard and Ant International framework was announced on September 9 and 10, 2026, as the start of a collaboration, with no products or dates yet.</p>
+    <p><b>Truth Terminal.</b> Andy Ayrey built it and vets its posts. The $50,000 was a personal grant from Marc Andreessen in July 2024. The coin GOAT was made by an anonymous fan, not by the bot; it passed $1 billion in market value in November 2024 and has since fallen about 99%. The bot's “million” was a paper value of tokens people sent it.</p>
+    <p><b>Contact centers.</b> Pindrop's figures come from more than 1.2 billion calls to its own customers. The Arup call was reported by Hong Kong police in February 2024 and confirmed by <a class="xref" href="https://www.dezeen.com/2024/05/17/arup-victim-deepfake-video-scam/" target="_blank" rel="noopener">Arup</a> in May 2024; the deepfaked participants were reportedly prerecorded, not live.</p>
+    <p><b>The term.</b> Botao Amber Hu, Yuhan Liu and Helena Rong used “self-sovereign” for AI agents in <a class="xref" href="https://arxiv.org/abs/2505.09757" target="_blank" rel="noopener">2025</a>; Qu and colleagues gave it the pays-its-own-bills meaning, and arXiv dates their first version to March 2026. Linking the name to self-sovereign identity is our reading, not theirs.</p>
+    <p><b>Provenance.</b> Content Credentials show where a file came from and how it was edited. They can be stripped, and they say nothing about whether what's shown is true.</p>
+  </details>
+
+  <details id="notes-sources">
+    <summary>Sources and credits</summary>
+    <p><b>The paper.</b> Wenjie Qu, Xuandong Zhao, Jiaheng Zhang and Dawn Song, <a class="xref" href="https://arxiv.org/abs/2604.08551" target="_blank" rel="noopener">“Self-Sovereign Agent”</a> (National University of Singapore and UC Berkeley, 2026); <a class="xref" href="https://rdi.berkeley.edu/blog/self-sovereign-agent" target="_blank" rel="noopener">Berkeley RDI overview</a>. <q>Rarer, but not extinct</q> glosses §7.2; the survival rule behind the headless machine is §3.3.</p>
+    <p><b>Agents and payments.</b> <a class="xref" href="https://www.linuxfoundation.org/press/linux-foundation-announces-operational-launch-of-x402-foundation-to-standardize-internet-native-payments-for-ai-agents-and-applications" target="_blank" rel="noopener">Linux Foundation, x402 Foundation</a> (July 2026); <a class="xref" href="https://finance.yahoo.com/markets/crypto/articles/coinbase-global-launches-app-store-134600286.html" target="_blank" rel="noopener">Coinbase figures via Yahoo Finance</a> (April 2026); <a class="xref" href="https://investor.mastercard.com/investor-news/investor-news-details/2025/Mastercard-Unveils-Agent-Pay-Pioneering-Agentic-Payments-Technology-to-Power-Commerce-in-the-Age-of-AI/default.aspx" target="_blank" rel="noopener">Mastercard Agent Pay</a> (April 2025); <a class="xref" href="https://cloud.google.com/blog/products/ai-machine-learning/announcing-agents-to-payments-ap2-protocol" target="_blank" rel="noopener">Google, Agent Payments Protocol</a> (September 2025); <a class="xref" href="https://finance.yahoo.com/technology/ai/articles/ant-international-mastercard-visa-initiate-010000855.html" target="_blank" rel="noopener">Ant International, Mastercard and Visa</a> (September 2026).</p>
+    <p><b>Trust and fraud.</b> <a class="xref" href="https://cpl.thalesgroup.com/about-us/newsroom/ai-driven-bot-attacks-surged-according-to-bad-bot-report" target="_blank" rel="noopener">Thales, 2026 Bad Bot Report</a>; <a class="xref" href="https://www.prnewswire.com/news-releases/pindrops-2025-voice-intelligence--security-report-reveals-1-300-surge-in-deepfake-fraud-302479482.html" target="_blank" rel="noopener">Pindrop, 2025 Voice Intelligence + Security Report</a>; <a class="xref" href="https://www.fcc.gov/consumers/guides/spoofing" target="_blank" rel="noopener">FCC, caller ID spoofing</a>; <a class="xref" href="https://hongkongfp.com/2024/02/05/multinational-loses-hk200-million-to-deepfake-video-conference-scam-hong-kong-police-say/" target="_blank" rel="noopener">Hong Kong Free Press / AFP</a> and <a class="xref" href="https://www.dezeen.com/2024/05/17/arup-victim-deepfake-video-scam/" target="_blank" rel="noopener">Dezeen</a> on Arup; <a class="xref" href="https://blog.google/security/pixel-android-trusted-images-c2pa-content-credentials/" target="_blank" rel="noopener">Google on Pixel 10 Content Credentials</a>; <a class="xref" href="https://c2pa.org/about/" target="_blank" rel="noopener">C2PA</a>.</p>
+    <p><b>Truth Terminal.</b> <a class="xref" href="https://decrypt.co/239340/marc-andreessen-sends-50k-in-bitcoin-to-an-ai-bot-on-twitter" target="_blank" rel="noopener">Decrypt</a>; <a class="xref" href="https://www.theblock.co/post/322002/marc-andreessen-funded-ai-bot-becomes-a-millionaire-after-fartcoin-holdings-rally" target="_blank" rel="noopener">The Block</a>; <a class="xref" href="https://techpolicy.press/the-rise-and-fall-and-rise-again-of-the-first-ai-agent-millionaire" target="_blank" rel="noopener">Seth Lazar, Tech Policy Press</a>; <a class="xref" href="https://www.coingecko.com/en/coins/goatseus-maximus" target="_blank" rel="noopener">CoinGecko</a>.</p>
+    <p><b>Self-sovereign identity.</b> <a class="xref" href="https://www.lifewithalacrity.com/article/the-path-to-self-soverereign-identity/" target="_blank" rel="noopener">Christopher Allen, “The Path to Self-Sovereign Identity”</a> (2016).</p>
+    <p><b>The teammate pitch.</b> <a class="xref" href="https://www.microsoft.com/en-us/worklab/work-trend-index/2025-the-year-the-frontier-firm-is-born" target="_blank" rel="noopener">Microsoft WorkLab, “2025: The Year the Frontier Firm Is Born”</a> (Work Trend Index, April 2025).</p>
+    <p><b>Jean Phil.</b> <a class="xref" href="https://www.tiktok.com/@jean_philanthrope" target="_blank" rel="noopener">@jean_philanthrope</a>; <a class="xref" href="https://trending.knowyourmeme.com/editorials/guides/who-is-jean-philanthrope-and-is-he-ai-the-mysterious-frenchman-named-jean-phil-shadowboxing-across-social-media-explained" target="_blank" rel="noopener">Zach Sweat, Know Your Meme</a> (5.6 million views in three days, for a Paris park clip); the coins on <a class="xref" href="https://dexscreener.com/solana/4R8CiMnJWDNoes3fQi1ccPFJygPXazaHaWpHrN3rZeNj" target="_blank" rel="noopener">DEX Screener</a> and <a class="xref" href="https://www.geckoterminal.com/solana/pools/4R8CiMnJWDNoes3fQi1ccPFJygPXazaHaWpHrN3rZeNj" target="_blank" rel="noopener">GeckoTerminal</a>, where sixteen is a floor; TikTok's Tako replies from our screenshots of September 26, 2026. The accounts in the second clip stack are <a href="https://www.tiktok.com/@jeanphilbonjour" target="_blank" rel="noopener">@jeanphilbonjour</a>, <a href="https://www.tiktok.com/@odette_boulard" target="_blank" rel="noopener">@odette_boulard</a>, <a href="https://www.tiktok.com/@marlene.phil" target="_blank" rel="noopener">@marlene.phil</a> and <a href="https://www.tiktok.com/@babyjeanphil" target="_blank" rel="noopener">@babyjeanphil</a>. Who runs any of them is unknown.</p>
+    <p><b>Artwork.</b> The cover card, the bust, the Jean Phil symbol, the Tako drawings, the many-eyed monster, the headless machine and the two playing cards are AI-assisted Snakes &amp; Gardens illustrations; the closing garden is Snakes &amp; Gardens artwork from 2023.</p>
+  </details>
+
+  <p class="fine mono notes-foot">Snakes &amp; Gardens · Internal edition · October 7, 2026. For internal circulation. Videos and screenshots belong to their creators and appear here for reporting and commentary.</p>
+</section>
+
+</main>
+
+<dialog class="exhibit" id="exhibit">
+  <form method="dialog"><button class="exhibit-close mono" aria-label="Close">Close ×</button></form>
+  <img id="exhibit-img" src="" alt="">
+  <p class="mono" id="exhibit-cap"></p>
+</dialog>
+
+<div class="grain" aria-hidden="true"></div>
+
+<script type="module" src="main.js"></script>
+<script type="module" src="assets/js/edition.js"></script>
+</body>
+</html>
